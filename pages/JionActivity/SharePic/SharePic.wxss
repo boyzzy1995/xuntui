@@ -1,0 +1,33 @@
+/* pages/JionActivity/SharePic/SharePic.wxss */
+page{
+  background-color: #eee;
+}
+.GrayLine{
+  background-color: #eee;
+  height: 20rpx;
+}
+.WhitePanel{
+  background-color: #fff;
+  display: flex;
+  padding:20rpx 20rpx 40rpx 20rpx;
+  flex-direction:column;
+  
+}
+.canvas-box{
+  height: 300px;
+  width: 100%;
+}
+.SaveButton{
+  background-color: #8a8a8a;
+  color: #fff;
+  border-radius: 0;
+  width: 100%;
+  font-size: 30rpx;
+  margin-top:40rpx;
+}
+.WordsPanel{
+  padding:20rpx 0 0 0;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+button::after{border: none}

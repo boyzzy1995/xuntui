@@ -1,0 +1,18 @@
+/* pages/ScanIndex/ScanIndex.wxss */
+.body{
+  height: 300rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+.Panel{
+ border: 1px solid #eee;
+ border-radius: 5px;
+ padding: 20rpx 0;
+}
+input{
+  padding-left: 20rpx;
+  color: #8a8a8a;
+}
+.btnSumbit{
+  margin-top: 20rpx;
+}

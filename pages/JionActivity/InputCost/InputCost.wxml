@@ -1,0 +1,11 @@
+<!--pages/JionActivity/InputCost/InputCost.wxml-->
+<view class='view'>
+  <input id="cost" type="digit" class="input" placeholder='输入本次消费的金额' bindinput='input'></input>
+</view>
+<view class='view'>
+  <text class='tip'>消费金额以点单小票/服务员确认⾦额为准</text>
+</view>
+<view class='view' style='height:180rpx;'>
+  <button type='warn' bindtap='submit' class='btn'>确认并开启砍价</button>
+  <button type='warn' bindtap='toIndex' class='btn'>回到寻推主页</button>
+</view>

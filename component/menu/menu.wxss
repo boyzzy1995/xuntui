@@ -1,0 +1,26 @@
+.menu{
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  /* border-top: 1px #888888 solid; */
+  background-color: white;
+  color: #999;
+  font-size:20rpx;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.04);
+  height: 90rpx;
+}
+.menu view{
+  flex: 1;
+  text-align: center;
+  padding-top: 10rpx; 
+}
+
+.menu-image{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5rpx; 
+  margin-bottom: 5rpx 
+}

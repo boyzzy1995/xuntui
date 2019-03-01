@@ -1,0 +1,39 @@
+/* pages/JionActivity/InputCost/InputCost.wxss */
+
+.view {
+  width: 96%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+  flex-direction:column;
+}
+
+.title {
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+
+.tip {
+  font-size: 26rpx;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+.input {
+  border-radius: 5px;
+  padding: 20rpx 20rpx;
+  border: 1px solid #eee;
+  font-size: 36rpx;
+  color: #8a8a8a;
+  width:500rpx;
+  text-align: center;
+}
+.input::-webkit-input-placeholder{
+  font-size: 36rpx;
+} 
+.btn{
+ font-size: 32rpx;
+ width:540rpx;
+}

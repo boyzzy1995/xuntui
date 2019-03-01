@@ -1,0 +1,163 @@
+/* pages/StartActivity/Tools/Common/Common.wxss */
+
+.body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  height: 100rpx;
+}
+
+.productImg {
+  height: 421rpx;
+  border: 1px solid #eee;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UploadTips {
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+
+.ProductWords {
+  padding: 10rpx 0;
+  background-color: #8a8a8a;
+  color: #fff;
+  width: 200rpx;
+  font-size: 26rpx;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.TopImg {
+  width: 100%;
+  height: 421rpx;
+}
+
+.InputView {
+  width: 88%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.InputTxt {
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+}
+
+.InputBoxView {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  justify-content: space-between;
+}
+
+.InputBox {
+  font-size: 32rpx;
+  color: #8a8a8a;
+}
+
+.picker {
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+
+/*添加活动图片*/
+
+.ActivityPicListView {
+  width: 90%;
+  height: 380rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20rpx;
+  border: 1px solid #eee;
+}
+
+.PicListIcon {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.ActivityImg {
+  height: 380rpx;
+  margin-top: 10px;
+  border: 1px solid #eee;
+}
+
+/*必填报名项*/
+
+.SignView {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.SignViewInputBox {
+  padding: 20rpx 0 0 0;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Sign {
+  padding: 15rpx 20rpx;
+  background-color: #eee;
+  width: 80%;
+}
+
+.inputAddPngView {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  height: 70rpx;
+  padding: 20rpx;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.inputAddPng {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/*工具使用说明*/
+
+.Notify {
+  width: 88%;
+  padding: 10rpx;
+  margin-top: 20rpx;
+}
+
+.NotifyTitle {
+  font-size: 34rpx;
+  color: #ff7f00;
+}
+
+.NotifyContent {
+  color: #8a8a8a;
+  font-size: 28rpx;
+  padding-top: 10rpx;
+}
+
+.SumbitButton {
+  background-color: red;
+  width: 88%;
+}

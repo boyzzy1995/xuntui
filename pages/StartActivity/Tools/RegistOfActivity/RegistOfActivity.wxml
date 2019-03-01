@@ -1,0 +1,141 @@
+<!--pages/StartActivity/Tools/Common/Common.wxml-->
+<view class='body'>
+  <view class='productImg' bindtap='ChangeImg'>
+    <view class='UploadTips' style='display:{{TipsDisplay}}'>
+      点击上传活动商品图片(16:9)
+    </view>
+    <block wx:for="{{pics}}" wx:key="">
+      <image src="{{'https://img.jinghangkuajing.com/temporary/'+item+'-compress'}}" class='TopImg'></image>
+      <view class='ProductWords'>
+        更换宣传图片
+      </view>
+    </block>
+  </view>
+
+  <view class='InputView'>
+    <view class='InputTxt'>活动标题</view>
+    <view class='InputBoxView'>
+      <input id="title" bindinput="input" class='InputBox' placeholder='活动标题'></input>
+    </view>
+  </view>
+
+  <view class='InputView'>
+    <view class='InputTxt'>活动时间</view>
+    <picker mode="date" value="{{startTime}}" start="{{pickertimestrat}}" end="{{pickertimeend}}" bindchange="bindFixDateChange">
+      <view class="picker">
+        {{startTime}}
+      </view>
+    </picker>
+    <text style='text-align:center;font-size:34rpx;'>至</text>
+    <picker mode="date" value="{{endTime}}" start="{{pickertimestrat}}" end="{{pickertimeend}}" bindchange="bindActiveDateChange">
+      <view class="picker">
+        {{endTime}}
+      </view>
+    </picker>
+  </view>
+
+  <view class='InputView'>
+    <view class='InputTxt'>活动地址</view>
+    <view class='InputBoxView'>
+      <picker bindchange="bindPickerProvinceChange" range="{{provinces}}">
+        <view class="picker {{selProvince=='请选择'?'hui':''}}">
+          {{selProvince}}
+        </view>
+      </picker>
+      <picker bindchange="bindPickerCityChange" range="{{citys}}">
+        <view class="picker {{selCity=='请选择'?'hui':''}}">
+          {{selCity}}
+        </view>
+      </picker>
+      <picker bindchange="bindPickerChange" range="{{districts}}">
+        <view class="picker {{selDistrict=='请选择'?'hui':''}}">
+          {{selDistrict}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class='InputView'>
+    <view class='InputTxt'>详细地址</view>
+    <view class='InputBoxView'>
+      <input id="detailAddress" bindinput="addressinput" class='InputBox' placeholder='详细地址'></input>
+    </view>
+  </view>
+
+  <!-- <view class='InputView'>
+    <view class='InputTxt'>限制人数</view>
+    <view class='InputBoxView'>
+      <input id="peopleNum" type="number" bindinput="input" class='InputBox' placeholder='人数'></input>
+    </view>
+  </view> -->
+
+  <view class='InputView'>
+    <view class='InputTxt'>活动简介</view>
+    <view class='InputBoxView'>
+      <textarea bindinput="input" id="detail" placeholder='活动简介' auto-height='true' style="color:#999;width:100%;font-size:32rpx;" />
+    </view>
+  </view>
+
+  <!-- <view class='InputView'>
+    <view class='InputTxt'>设置参与奖</view>
+    <view class='InputBoxView'>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+ 
+ <view class='InputView' wx:if="{{isJionPrice=='是'}}">
+    <view class='InputTxt'>参与奖</view>
+    <view class='InputBoxView'>
+      <input id="price"  bindinput="input" class='InputBox' placeholder='奖品名称' value='优惠券'></input>
+    </view>
+  </view> -->
+
+  <!--添加图片配文-->
+  <view class='ActivityPicListView' bindtap='addPic' wx:if="{{ActivityPics.length<=0}}">
+    <!-- <image src='/images/addPic.png' class='PicListIcon' bindtap='addPic'></image> -->
+    <text style='font-size:30rpx;color:#8a8a8a'>上传图片(16:9)最多9张</text>
+  </view>
+
+  <block wx:for="{{ActivityPics}}" wx:key="">
+    <image src="{{'https://img.jinghangkuajing.com/temporary/'+item+'-compress'}}" class='ActivityImg'></image>
+    <!-- <view>
+      <input id="picDescripe{{index}}" bindinput="input" class='InputBox' placeholder='输入一段描述的文字'></input>
+    </view> -->
+  </block>
+
+  <!--必填报名项-->
+  <view class='SignView'>
+    <view class='NotifyTitle'>必填报名项:</view>
+    <block wx:for="{{inputList}}" wx:key="{{index}}">
+      <view class='SignViewInputBox'>
+        <input id="list{{index}}" bindinput="SignInput" data-id="{{index}}" class='InputBox Sign' placeholder='报名项' value='{{item.value}}'></input>
+        <image src='/images/minus.png' class='inputAddPng' data-index='{{index}}' bindtap="deleteInput"></image>
+      </view>
+    </block>
+    <view class='inputAddPngView' bindtap='addInputList'>
+      <image src='/images/inputAdd.png' class='inputAddPng'></image>
+      <text style='margin-left:10rpx;font-size:30rpx;'>添加选项</text>
+    </view>
+  </view>
+
+  <view class='Notify'>
+    <view class='NotifyTitle'>工具使用说明:</view>
+    <view class='NotifyContent'>
+      <text>1.	请添加活动商品或服务图片
+2.	限制人数为报名最多人数
+3.	添加活动详情图片（可配文字）
+4.	可设置选填项
+5.	设置参与奖，更容易吸引顾客分享
+6.	活动发布后，不可取消，请确认活动信息无误
+7.	本工具支持转发微信好友、群、朋友圈，
+8.	本工具为手动核销，消费者出示折扣码，请在【我的店铺】里进行【扫码核销】
+</text>
+    </view>
+  </view>
+
+  <button type='warn' class='SumbitButton' bindtap='submit'>发布活动</button>
+</view>

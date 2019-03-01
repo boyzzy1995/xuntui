@@ -1,0 +1,24 @@
+<!--pages/index/LocationSearch/LocationSearch.wxml-->
+<view class='Panel'>
+  <input class='' placeholder='地址关键字' class='input' bindinput="bindKeyInput"></input>
+  <block wx:if='{{!LocationDisplay}}' wx:for="{{sugData.result}}" wx:key="">
+    <view class='AddresListPanel'>
+      <view class='AddressName'>
+        <image src='/images/index_loc.png' class='AddressLocImg'></image>
+        <view>{{item.name}}</view>
+      </view>
+      <view class='AddressDeatil'>石祥路438</view>
+    </view>
+  </block>
+  <view wx:if='{{LocationDisplay}}' class='CurrentLoaction'>
+    <view class='Title'>
+      <view class='LeftTitle'>当前定位</view>
+      <view class='RightTitle'>重新定位</view>
+    </view>
+    <view class='Content'>{{placeData.address}}</view>
+  </view>
+</view>
+<view wx:if='{{LocationDisplay}}' class='GrayLine'></view>
+<!-- <view class="sug_info"> 
+  <text>{{sugData}}</text> 
+</view> -->

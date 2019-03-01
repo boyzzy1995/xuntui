@@ -1,0 +1,108 @@
+<!--pages/MyShop/MyShop.wxml-->
+
+  <view class="head">
+    <!-- <view class='cover'>
+   
+ </view> -->
+    <image src='https://img.jinghangkuajing.com/advertising/resource/coupon-default1.png-compress' class='cover-img'></image>
+    <view class="content">
+      <view class="name">
+        <span class="name-span">山家清作</span>
+      </view>
+      <view class="des">
+        <span class="des-span">我们是一家及其好吃的外卖我们是一家及其好吃的外卖我们是一家及其好吃的外卖我们是一家及其好吃的外卖我们是一家及其好吃的外卖</span>
+      </view>
+      <view class="icon">
+        <image src='https://img.jinghangkuajing.com/advertising/resource/coupon-default1.png-compress' style='width:100rpx;height:100rpx;'></image>
+      </view>
+    </view>
+  </view>
+  <view class="body-nav">
+    <view class="{{navViewShow}}" bindtap='showMine'>活动</view>
+    <view class="{{navView}}" bindtap='showDetail'>店铺详情</view>
+  </view>
+  <view class='{{bodyMine}}'>
+    <scroll-view scroll-y="true" class="left-scroll">
+      <view class="{{gameView}}" bindtap='showGameView'>
+        <span class="left-view-span">商家的游戏</span>
+      </view>
+      <view class="{{couponView}}" bindtap='showCouponView'>
+        <span class="left-view-span">商家的优惠券</span>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y="true" class="{{gameScrollView}}">
+      <view class="box-view">
+        <image src='../../static/xyx.png' class="xyx-img"></image>
+      </view>
+
+    </scroll-view>
+    <scroll-view scroll-y="true" class="{{couponScrollView}}">
+      <view wx:for="{{Coupon}}" wx:key="">
+        <view class='Coupon-view' wx:for="{{item.userCoupons}}" wx:key="" wx:for-item="coupons">
+          <view class='Coupon'>
+
+            <view class='img-view'>
+              <image src='{{item.preview}}'>
+              </image>
+            </view>
+
+            <view class='functional'>
+
+              <view class='price'>
+                <block wx:if="{{coupons.couponVO.type==0}}">
+                  <em>¥</em>
+                  <strong>{{coupons.couponVO.value}}</strong>
+                </block>
+                <block wx:else>
+                  <strong>{{coupons.couponVO.value}}</strong>
+                  <em>折</em>
+                </block>
+
+                <span>满{{coupons.couponVO.moneyThreshold }}可用
+                </span>
+
+              </view>
+
+              <view class='range'>
+                <span>{{coupons.couponVO.title}}</span>
+              </view>
+
+              <view class='progress'>
+                <block wx:if="{{coupons.couponVO.effectiveRule==0}}">
+                  <span>{{coupons.couponVO.dateStart}}-{{coupons.couponVO.dateEnd}}</span>
+                </block>
+                <block wx:else>
+                  <span>{{coupons.userCouponVO.createTime}}-{{coupons.userCouponVO.endTime}}</span>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="{{bodyDetail}}">
+    <view class="basic-info">
+      基础信息
+    </view>
+    <view class='text-view-container'>
+      <view class='text-view'>
+        <view class='left-text'> 店铺名称:</view>
+        <view class='right-text'>山家清作</view>
+      </view>
+      <view class='text-view'>
+        <view class='left-text'> 电话:</view>
+        <view class='right-text'>123123123</view>
+      </view>
+      <view class='text-view'>
+        <view class='left-text'> 地址:</view>
+        <view class='right-text'>浙江外国语学院</view>
+      </view>
+    </view>
+    <view class="basic-info">
+      店铺展示
+    </view>
+    <view class='show-img'>
+      <image src='../../static/yhq.png'></image>
+    </view>
+  </view>

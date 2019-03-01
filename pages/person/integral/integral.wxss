@@ -1,0 +1,47 @@
+/* pages/person/integral/integral.wxss */
+page{
+
+}
+.input-view{
+  width:95%;
+  display:flex;
+  border-radius: 20rpx;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.04);
+  border: 1px solid #f2f2f2;
+  background: #fff;
+  margin: 20rpx;
+}
+.input-view-container{
+  width:90%;
+  margin:0 auto;
+  padding: 20rpx;
+}
+.pay-text{
+   width:30%;
+  float:left;
+}
+.pay-input{
+  width:50%;
+  float:left;
+  height: 40rpx;
+}
+.btn-comfirm{
+  width:95%;
+  display:block;
+  margin: 0 20rpx;
+}
+.img-view{
+  width:240px;
+  height: 240px;
+  display:flex;
+  border-radius: 20rpx;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.04);
+  border: 1px solid #f2f2f2;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.restView{
+  text-align: center;
+  padding: 20rpx 0;
+}

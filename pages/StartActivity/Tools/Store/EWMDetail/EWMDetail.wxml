@@ -1,0 +1,12 @@
+<!--pages/NewMyShop/EWMDetail/EWMDetail.wxml-->
+<view class='GrayLine'></view>
+<view class='WhitePanel'>
+  <view class='canvas-box'>
+    <image src='{{imgUrl}}' class='img'></image>
+  </view>
+  <view class='tip'>本活动为店内活动，请让到店客户扫码参与</view>
+  <button class='SaveButton' bindtap="saveImg">保存图片</button>
+  <block wx:if="{{isShow}}">
+    <button class='SaveButton' bindtap="getBack">确认返回</button>
+  </block>
+</view>

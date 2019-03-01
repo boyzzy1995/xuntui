@@ -1,0 +1,66 @@
+<!--pages/StartActivity/Tools/Common/Common.wxml-->
+<view class='body'>
+  <view class='productImg' bindtap='ChangeImg'>
+    <view class='UploadTips' style='display:{{TipsDisplay}}'>
+      点击上传活动商品图片(16:9)
+    </view>
+    <block wx:for="{{pics}}" wx:key="">
+      <image src="{{'https://img.jinghangkuajing.com/temporary/'+item+'-compress'}}" class='TopImg'></image>
+      <view class='ProductWords'>
+        更换活动商品
+      </view>
+    </block>
+
+  </view>
+  <view class='InputView'>
+    <view class='InputTxt'>砍价商品/服务</view>
+    <view class='InputBoxView'>
+      <input id="title" bindinput="input" class='InputBox' placeholder='砍价商品/服务'></input>
+    </view>
+  </view>
+  <view class='InputView'>
+    <view class='InputTxt'>原价</view>
+    <view class='InputBoxView'>
+      <input id="originalPrice" bindinput="input" class='InputBox' placeholder='原价'></input>
+    </view>
+  </view>
+  <view class='InputView'>
+    <view class='InputTxt'>活动时间</view>
+    <picker mode="date" value="{{startTime}}" start="{{pickertimestrat}}" end="{{pickertimeend}}" bindchange="bindFixDateChange">
+      <view class="picker">
+        {{startTime}}
+      </view>
+    </picker>
+    <text style='text-align:center;font-size:34rpx;'>至</text>
+    <picker mode="date" value="{{endTime}}" start="{{pickertimestrat}}" end="{{pickertimeend}}" bindchange="bindActiveDateChange">
+      <view class="picker">
+        {{endTime}}
+      </view>
+    </picker>
+  </view>
+  <!-- <view class='InputView'>
+    <view class='InputTxt'>奖品份数</view>
+    <view class='InputBoxView'>
+      <input bindinput="input" class='InputBox' type="number" placeholder='奖品份数' id=""></input>
+    </view>
+  </view> -->
+  <view class='InputView'>
+    <view class='InputTxt'>砍后最低价</view>
+    <view class='InputBoxView'>
+      <input id="minValue" bindinput="input" class='InputBox' placeholder='砍后最低价'></input>
+    </view>
+  </view>
+  <view class='Notify'>
+    <view class='NotifyTitle'>工具使用说明:</view>
+    <view class='NotifyContent'>
+      <text>1.	请添加砍价活动商品或服务图片
+            2.	输入原价，并设置砍后的最低价格
+3.	顾客只可在您设置的活动时间内使用砍后优惠
+4.	活动发布后，不可取消，请确认活动信息无误
+5.	本工具支持转发微信好友、群、朋友圈
+6.	本工具为手动核销，消费者出示折扣码，请在【我的店铺】里进行【扫码核销】
+      </text>
+    </view>
+  </view>
+  <button type='warn' class='SumbitButton' bindtap='submit'>发布活动</button>
+</view>

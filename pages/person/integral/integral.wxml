@@ -1,0 +1,16 @@
+<!--pages/person/integral/integral.wxml-->
+<view class="input-view">
+  <view class="input-view-container">
+    <text class='pay-text'>支付积分:</text>
+    <input bindinput='input' type="number" placeholder='积分' id="total" class='pay-input' value='{{total}}'></input>
+  </view>
+</view>
+<view class="btn-comfirm">
+  <button bindtap='payIntegral' type='warn' disabled="{{disabled}}">确定</button>
+</view>
+<view class='{{imgView}}'>
+  <image src='{{url}}'></image>
+</view>
+<view class='restView'>
+  <span>{{restTime}}</span>
+</view>

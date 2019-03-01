@@ -1,0 +1,152 @@
+<!--pages/JionActivity/JionActivity.wxml-->
+<wxs module="filters" src="../../index/import.wxs"></wxs>
+<view class='body'>
+  <!--头部内容展示-->
+  <view class='TopBox'>
+
+    <view class='NameView'>
+      <view class='NameViewLeft'>
+        <view class='HeadPortrait'>
+          <image src="{{bargainTeam.records[0].user.avatarUrl}}" class="HeadPortraitImg"></image>
+        </view>
+        <view class='AccountName'>{{bargainTeam.records[0].user.nickName}}</view>
+      </view>
+      <view class='NameViewRight' bindtap="ShowRules">
+        <view class='ActivityRules'>活动规则</view>
+      </view>
+    </view>
+    <view class='ProductImgView'>
+      <image src="{{bargain.preview}}" class='ActivityListImg'></image>
+    </view>
+    <view class='ActivityTitleContent'>
+      <!-- <view class='BrandName'>[美特斯邦威]</view> -->
+      <view class='ProductName'>{{bargain.title}}</view>
+    </view>
+
+    <view class='ActivityIcon'>
+      <view class='LeftIconContainer'>
+        <block wx:for="{{bargain.avatars}}" wx:key="{{index}}">
+          <view wx:if="{{index==0}}" class='IconContainer'>
+            <!-- <view class='AcitivityIconEntity'></view> -->
+            <image class="AcitivityIconEntity" src="{{item}}"></image>
+          </view>
+          <view wx:if="{{index!=0}}" class='IconContainerNext'>
+            <!-- <view class='AcitivityIconEntity'></view> -->
+            <image class="AcitivityIconEntity" src="{{item}}"></image>
+          </view>
+        </block>
+      </view>
+
+      <view class='RightIconContainer'>
+        {{bargain.number}}人正在参与
+      </view>
+    </view>
+    <view class='ProgressView'>
+      <block wx:if="{{bargain.type<2000}}">
+        <progress percent="{{((bargain.originalPrice-bargainTeam.currentPrice)/(bargain.originalPrice-bargain.minValue))*100}}" color="green" />
+      </block>
+      <block wx:else>
+        <progress percent="{{((bargainTeam.originalPrice-bargainTeam.currentPrice)/(bargainTeam.originalPrice-(bargainTeam.originalPrice*(bargain.minValue/10))))*100}}" color="green" />
+      </block>
+    </view>
+    <view class='PriceView'>
+      <view class='LeftPrice'>已砍{{filters.toFix(bargainTeam.originalPrice-bargainTeam.currentPrice)}}元</view>
+      <view class='RightPrice'>现价{{bargainTeam.currentPrice}}元</view>
+    </view>
+  </view>
+
+  <!--喊好友帮忙砍-->
+  <view class='InviteFriendView'>
+    <block wx:if="{{btnCallFriendHelpYou}}">
+      <button type='warn' open-type='share' style="display:{{ActivityFinish}}">喊好友帮你砍⼀刀</button>
+    </block>
+    <block wx:else>
+      <button type='warn' open-type='share' style="display:{{ActivityFinish}}">喊好友帮ta砍⼀刀</button>
+    </block>
+  </view>
+  <view class='LeftTimeView'>
+    结束时间: {{bargain.endTime}} 结束
+  </view>
+
+  <view class='UseView'>
+    <block wx:if="{{btnCallFriendHelpYou}}">
+      <button class='UseButton' bindtap='getBarCode' style="display:{{ActivityFinish}}">立即使用</button>
+    </block>
+
+    <block wx:if="{{btnMeWant}}">
+      <button class='UseButton' style="display:{{ActivityFinish}}" bindtap='toJoinActivity' data-id='{{bargain.id}}'>我也要参加</button>
+    </block>
+
+    <block wx:if="{{toStoreJionActivity}}">
+      <button class='UseButton' disabled='disabled' bindtap='toJoinActivity' data-id='{{bargain.id}}'>到店参与</button>
+    </block>
+
+    <image src='{{BarCodeImg}}' class="BarCodeImg" style='display:{{BarCodeShow}};'></image>
+  </view>
+  <!--砍价帮手团-->
+  <view class='FriendsGroupView'>
+    <view class='HeadTitle'>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+      <view class='HeadTitleWords'>砍价帮手团</view>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+    </view>
+    <block wx:for="{{bargainTeam.records}}" wx:key="{{index}}">
+      <view class='FriendsPortials'>
+        <view class='PortialsIcon'>
+          <image src="{{item.user.avatarUrl}}" class='FriendShipTeamIcon'></image>
+        </view>
+        <view class='AccountDeatil'>{{item.user.nickName}}</view>
+        <view class='Time'>{{item.bargainTime}}</view>
+        <view class='Price'>{{item.bargainPrice}}元</view>
+      </view>
+    </block>
+  </view>
+  <!--浏览商家其他活动-->
+  <view class='OtherActivity'>
+    <view class='HeadTitle'>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImgSecond'></image>
+      </view>
+      <view class='HeadTitleWords'>浏览商家其他活动</view>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImgSecond'></image>
+      </view>
+    </view>
+    <view class='ButtonGroup'>
+      <button type='default' data-storeId="{{bargain.storeId}}" bindtap="toStoreActivity">该商家其他活动</button>
+      <button type='default' bindtap="moreActivity">更多商家活动</button>
+    </view>
+  </view>
+  <view class='BottomButtonGroup'>
+    <button class='ShareButton' bindtap='showMask' disabled='{{shareBtn}}'>分享给朋友</button>
+    <button class='StartActivity' bindtap='toStartActivity'>我也要发起活动</button>
+  </view>
+</view>
+<!--模态框-->
+<view class='mask' wx:if='{{show}}'>
+  <view class='modal-content'>
+    <view class='text-view' bindtap='onShareAppMessage'>
+      <button open-type='share' class='customBtn'>邀请微信好友</button>
+    </view>
+    <view class='text-view' bindtap='showShareImg'>
+      <button class='customBtn'>生成分享图</button>
+    </view>
+    <view class='text-view' data-imgUrl="{{bargain.preview}}" data-title="{{bargain.title}}" data-endTime="{{bargain.endTime}}" bindtap='toJionGongZhongPage'>
+      <button class='customBtn'>嵌入到公众号文章</button>
+    </view>
+    <view style="height:5px;background: #eee;width:100%;"></view>
+    <view bindtap='cancel' class='text-view'>
+      取消
+    </view>
+  </view>
+</view>
+<!--生成图模态框-->
+<view hidden="{{maskHidden}}" class="mask"></view>
+<view class='canvas-box'>
+  <canvas style="width:750rpx; height:{{canvasHeight}}px;" canvas-id="myCanvas" />
+  <image src='{{imagePath}}' style='width:100%;height:{{canvasHeight}}px;'></image>
+</view>

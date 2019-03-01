@@ -1,0 +1,14 @@
+<!--pages/JionActivity/JionGongZhong/jionGongZhong.wxml-->
+<view class='GrayLine'></view>
+<view class='WhitePanel'>
+  <view class='canvas-box'>
+    <canvas style="width:100%; height:300px;" canvas-id="myCanvas" />
+    <!-- <image src='{{imagePath}}' style='width:100%;height:300px;'></image> -->
+  </view>
+  <button class='SaveButton' bindtap="saveImg">保存图片(1080*720像素)</button>
+</view>
+<view class='GrayLine'></view>
+<view class='WhitePanel'>
+  <view class='WordsPanel'>Pages/JionActivity/JionActivity</view>
+  <button class='SaveButton'>复制路径</button>
+</view>

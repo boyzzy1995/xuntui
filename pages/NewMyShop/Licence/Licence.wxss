@@ -1,0 +1,34 @@
+/* pages/NewMyShop/Licence/Licence.wxss */
+
+page {
+  font-size: 34rpx;
+  background-color: #eee;
+  font-weight: 500;
+}
+
+.Panel {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.LicenceImg {
+  background-color: #fff;
+  border:1px solid #eee;
+  height: 400rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+
+.GrayLine {
+  background-color: #eee;
+  height: 20rpx;
+}
+
+.Img {
+  height: 400rpx;
+  width: 100%;
+}

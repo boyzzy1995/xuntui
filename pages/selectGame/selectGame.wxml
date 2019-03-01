@@ -1,0 +1,36 @@
+<!--pages/selectGame/selectGame.wxml-->
+<view class="game-container">
+  <view class="btn-view" bindtap='toh5' data-src="outer">
+    <button>打地鼠</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="dazhuanpan">
+    <button>大转盘</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="zhaocha">
+    <button>找茬</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="jianfengchazhen">
+    <button>见缝插针</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="toulan">
+    <button>投篮</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="FlappyBird">
+    <button>像素小鸟</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="laohuji">
+    <button>老虎机</button>
+  </view>
+   <view class="btn-view" bindtap='toh5' data-src="wakuangren">
+    <button>挖矿人</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="caibaikuai">
+    <button>踩白块</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="jiejinbi">
+    <button>接金币</button>
+  </view>
+  <view class="btn-view" bindtap='toh5' data-src="saiche">
+    <button>赛车</button>
+  </view>
+</view>

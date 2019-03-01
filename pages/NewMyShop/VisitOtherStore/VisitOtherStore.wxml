@@ -1,0 +1,148 @@
+<!--pages/NewMyShop/MyShop.wxml-->
+
+<!--头部图标和背景-->
+<view class='Container'>
+  <view class='Panel'>
+    <image src='{{StoreInfo.explodedViews[0]}}' class='BCKImg'></image>
+  </view>
+  <view class="Icon">
+    <image src='{{StoreInfo.preview}}' class='IconImg'></image>
+  </view>
+  <view class='CompanyNamePanel'>
+    {{StoreInfo.name}}
+  </view>
+</view>
+<!--灰线-->
+<view class="GrayLine"></view>
+<!--地址栏-->
+<view class='AddressPanel'>
+  <view class='LeftImgPanel'>
+    <image src='/images/location.png' class='LocationImg'></image>
+    <view class='LocationWords'>{{StoreInfo.address}}</view>
+  </view>
+  <view class='RightPanel'>
+    <view class='EWM'>
+      <image src='{{StoreInfo.qrCode}}' class='EWMImg' data-qrCode="{{StoreInfo.qrCode}}" bindtap='toEWMDetail'></image>
+    </view>
+    <image src='/images/tel.png' class='LocationImg' bindtap='callPhone'></image>
+  </view>
+</view>
+<!--灰线-->
+<view class="GrayLine"></view>
+<!--全部商家活动导航-->
+<view class='NavBar'>
+  <block wx:for="{{NavList}}" wx:key="{{index}}">
+    <view class='{{item.style}}' data-index="{{index}}" bindtap="navTap">
+      {{item.title}}
+    </view>
+  </block>
+</view>
+<!--正在进行的商家活动-->
+<view class='ContentNull' style='display:{{NullTip}}'>
+  暂无任何商家活动
+</view>
+<block wx:for="{{ActivityList}}" wx:key="">
+  <view class='Activity' style="display:{{ActivityListDisplay}}">
+    <view class='ActivityImg'>
+      <image src="{{item.preview}}" class='ActivityListImg'></image>
+      <block wx:if="{{item.state==0}}">
+        <view class='LeftGoods'>正在进行</view>
+      </block>
+      <block wx:if="{{item.state==1}}">
+        <view class='LeftGoods'>即将开始</view>
+      </block>
+    </view>
+    <view class='ActivityTitleContent'>
+      <view class='BrandName'></view>
+      <view class='ProductName'>{{item.title}}
+        <block wx:if="{{item.type==2001||item.type==2002}}">
+          <text style='font-size:26rpx;color:#8a8a8a;'>店内消费先砍价再买单</text>
+        </block>
+      </view>
+    </view>
+    <view class='ActivityIcon'>
+      <view class='LeftIconContainer'>
+        <block wx:for="{{item.avatars}}" wx:key="{{index}}">
+          <view wx:if="{{index==0}}" class='IconContainer'>
+            <!-- <view class='AcitivityIconEntity'></view> -->
+            <image class="AcitivityIconEntity" src="{{item}}"></image>
+          </view>
+          <view wx:if="{{index!=0}}" class='IconContainerNext'>
+            <!-- <view class='AcitivityIconEntity'></view> -->
+            <image class="AcitivityIconEntity" src="{{item}}"></image>
+          </view>
+        </block>
+      </view>
+      <view class='RightIconContainer'>
+        {{item.number}}人正在参与
+      </view>
+    </view>
+    <view class='ActivityPrice'>
+      <block wx:if="{{item.type==2001||item.type==2002}}">
+          <view class='DownPrice' style='color:#8a8a8a'>{{item.address}}</view>
+        </block>
+        <block wx:else>
+          <view class='DownPrice'>折后价￥{{item.minValue}}</view>
+          <view class='InitPrice'>原价￥{{item.originalPrice}}</view>
+        </block>
+      <view class='ActivityPriceBtn'>
+       <block wx:if="{{item.type==2001||item.type==2002}}">
+            <button class='StyleJionBtn' disabled='disabled' data-id="{{item.id}}" bindtap='toJionActivity' wx:if="{{item.state!=1}}">到店参与</button>
+          </block>
+          <block wx:else>
+            <button class='StyleJionBtn' data-id="{{item.id}}" bindtap='toJionActivity' wx:if="{{item.state!=1}}">我要参与</button>
+          </block>
+      </view>
+    </view>
+
+    <view style='height:20rpx; border-bottom:1px solid #eee;'>
+
+    </view>
+  </view>
+</block>
+<view class="bottomLine" style="display:{{ActivityListDisplay}}">鲸航寻推技术支持~</view>
+<!-- </view> -->
+<!--商家信息-->
+<view class="StoreInfoPanel" style='display:{{StoreInfoDisplay}}'>
+  <view class='InputView'>
+    <view class='InputTxt'>营业时间</view>
+    <view class='InputBoxView'>
+      2017年12月4日
+    </view>
+  </view>
+  <view class='InputView' bindtap='toLicence' data-img='{{StoreInfo.explodedViews[0]}}'>
+    <view class='InputTxt'>商家许可资质</view>
+    <view class='InputBoxView'>
+      <image src='/static/arrow.png' class='ArrowIcon'></image>
+    </view>
+  </view>
+  <view class='EnvironmentImgView'>
+    <view class='EnvironmentImgTitle'>店铺环境图</view>
+    <block wx:for="{{StoreInfo.explodedViews}}" wx:key="">
+      <view class='EnvironmentImg'>
+        <image src='{{item}}' class='EnvironmentImgEntity'></image>
+      </view>
+    </block>
+  </view>
+</view>
+<!--核销管理-->
+<!-- <view class="StoreInfoPanel" style='display:{{HeXiaoDisplay}}'>
+
+  <view class='InputView' bindtap='hexiao'>
+    <view class='InputTxt'>扫码核销</view>
+    <view class='InputBoxView'>
+      <image src='/static/arrow.png' class='ArrowIcon'></image>
+    </view>
+  </view>
+  <view class='InputView'>
+    <view class='InputTxt'>手动核销</view>
+    <view class='InputBoxView'>
+      <image src='/static/arrow.png' class='ArrowIcon'></image>
+    </view>
+  </view>
+  <view class='HeXiaoView'>
+    <view class='HeXiaoTitle'>核销记录</view>
+    <view class='HeXiao'>1.2017年12月24日 12:50分</view>
+  </view>
+
+</view> -->

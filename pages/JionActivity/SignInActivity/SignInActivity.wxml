@@ -1,0 +1,110 @@
+<!--pages/JionActivity/SignInActivity/SignInActivity.wxml-->
+
+<view class='TopBox'>
+  <view class='RulesView'>
+    <view bindtap='toRules' class='RulesTitle'>活动规则</view>
+  </view>
+  <view class='imgView'>
+    <image src="{{list.info.preview}}" class='Topimg'></image>
+  </view>
+  <view style='position:absolute;width:97.5%'>
+    <view class='ActivityContent'>
+      <view class='title'>{{list.info.title}}</view>
+      <view class='time'>
+        <image src='/images/time.png' class='icon'></image>
+        {{list.info.startTime}} - {{list.info.endTime}}
+      </view>
+
+      <view class='where'>
+        <image src='/images/loc.png' class='icon'></image>
+        <block wx:if="{{list.info.address!=null}}">线下活动</block>
+        <block wx:else>线上活动</block>
+      </view>
+
+      <!-- <view class='people'>
+      <image src='/images/people.png' class='icon'></image> 已报名4人/ 100人
+    </view> -->
+      <view class='ActivityIcon' style='margin-top:10rpx;'>
+        <view class='LeftIconContainer'>
+          <block wx:for="{{list.avatars}}" wx:key="{{index}}">
+            <view wx:if="{{index==0}}" class='IconContainer'>
+              <image class="AcitivityIconEntity" src="{{item}}"></image>
+            </view>
+            <view wx:if="{{index!=0}}" class='IconContainerNext'>
+              <image class="AcitivityIconEntity" src="{{item}}"></image>
+            </view>
+          </block>
+        </view>
+        <view class='RightIconContainer'>
+          {{list.count}}人正在参与
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='activityDesc'>{{list.info.detail}}</view>
+  <view class='activityImgList'>
+    <block wx:for="{{list.info.imgs}}" wx:key="">
+      <view class='ImgView'>
+        <image src="{{item}}" class='itemImg'></image>
+      </view>
+    </block>
+  </view>
+  <view class='activityDesc padding' style='text-align:left;'>报名必填项</view>
+
+  <block wx:if="{{list.items!=null}}">
+    <block wx:for="{{list.items}}" wx:key="">
+      <view class='margin-top inputGroup padding'>
+        <input class='input' value="{{item}}" disabled='disabled' data-index="{{index}}" bindinput="input" placeholder='' />
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:for="{{list.info.items}}" wx:key="">
+      <view class='margin-top inputGroup padding'>
+        <input class='input' data-index="{{index}}" bindinput="input" placeholder='{{item}}' />
+      </view>
+    </block>
+  </block>
+
+  <!-- <view class='margin-top inputGroup padding'>
+    <input class='input' bindtap="input" placeholder='手机' />
+  </view> -->
+  
+  <view class='sumbitBtnView'>
+    <block wx:if='{{list.items.length>0}}'>
+      <button type="warn" disabled="disabled" class='subBtn' data-id="{{list.info.id}}" bindtap='submit'>提交</button>
+    </block>
+    <block wx:else>
+      <button type="warn" class='subBtn' data-id="{{list.info.id}}" bindtap='submit'>提交</button>
+    </block>
+
+  </view>
+
+
+  <!-- <view class='activityDesc'>我领到的折扣券</view>
+  <view class='margin-top coupon'>
+    <view class='tx'></view>
+    <view class='content'>
+      <view class='title'>折扣券</view>
+      <view class='lefttime'>剩余时间：24.35.08失效</view>
+    </view>
+    <view class='use'>立即使用</view>
+  </view> -->
+
+  <view class='OtherActivity'>
+    <view class='HeadTitle'>
+      <view class='LineImgView'>
+        <image src="/static/Line.png" class='LineImgSecond'></image>
+      </view>
+      <view class='HeadTitleWords'>浏览商家其他活动</view>
+      <view class='LineImgView'>
+        <image src="/static/Line.png" class='LineImgSecond'></image>
+      </view>
+    </view>
+    <view class='ButtonGroup'>
+      <button type='default' data-storeId="{{list.info.storeId}}" bindtap="toStoreActivity">该商家其他活动</button>
+      <button type='default' bindtap="moreActivity">更多商家活动</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/NewMyShop/Licence/Licence.wxml-->
+<!--灰线-->
+<view class="GrayLine"></view>
+<view class='Panel'>
+  <view class=''>
+    营业执照
+  </view>
+  <view class='LicenceImg'>
+    <!-- <image src='{{imgUrl}}' class='Img'></image> -->
+    <canvas style="width:100%; height:400rpx;" canvas-id="myCanvas" />
+  </view> 
+</view>
+<!--灰线-->
+<view class="GrayLine"></view>
+<view class='Panel'>
+  <view class=''>
+    食品卫⽣许可证
+  </view>
+  <view class='LicenceImg' bindtap='uploadImg'>
+     <view>点击上传(16:9)</view>
+  </view>
+</view>

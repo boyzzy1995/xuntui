@@ -1,0 +1,9 @@
+<!--component/picker/picker.wxml-->
+<!--顶部滚动窗口-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{topImgs}}" wx:key="" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" class='topImg' data-index="{{index}}" bindtap="toAbout" />
+      </swiper-item>
+    </block>
+  </swiper>

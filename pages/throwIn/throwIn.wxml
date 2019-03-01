@@ -1,0 +1,44 @@
+<!--pages/throwIn/throwIn.wxml-->
+<view style='padding-bottom:90rpx;'>
+<image src='../../static/2.jpeg' class='topImg'></image>
+<!--<view class='inputView' wx:if="{{id}}">
+<text>店铺名称：</text>
+<text style='width:65%;'>{{name}}</text>
+</view>!-->
+<view class='inputView'>
+  <text>您的姓名：</text>
+  <input bindinput="input" id='name' value='{{submitData.name}}' placeholder-class="pltext" placeholder='请填写你的名字'></input>
+</view>
+<view class='inputView'>
+  <text>联系电话：</text>
+  <input bindinput="input" id="telephone" value='{{submitData.telephone}}' placeholder-class="pltext" placeholder='11位手机号码'></input>
+</view>
+<view class='inputView'>
+  <text>公司名称：</text>
+  <input bindinput="input" id="companyName" value='{{submitData.companyName}}' placeholder-class="pltext" placeholder='请填写公司或门店名称'></input>
+</view>
+<view class='inputView'>
+  <text>广告内容：</text>
+  <input bindinput="input" id="content" value='{{submitData.content}}' placeholder-class="pltext" placeholder='请填写你想推广的产品或服务'></input>
+</view>
+<view class='inputView'>
+  <text>寻推服务：</text>
+  <!-- <input bindinput="input" id="content" value='{{submitData.content}}' placeholder-class="pltext" placeholder='请填写你想推广的产品或服务'></input> -->
+
+    <checkbox-group bindchange="checkboxChange" class="checkboxView">
+      <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+      </label>
+    </checkbox-group>
+
+</view>
+
+<view class='prompt'>
+  <text>提交信息后，工作人员会与您联系，对接广告投放事宜</text>
+</view>
+
+<button class="submit" bindtap='submit'>提交信息</button>
+</view>
+<view class='bottom'>
+  <menu adv="adv"></menu>
+</view>

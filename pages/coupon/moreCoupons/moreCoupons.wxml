@@ -1,0 +1,57 @@
+<!--pages/coupon/coupon.wxml-->
+<wxs module="filters" src="../../index/import.wxs"></wxs>
+<view class='yhq-container'>
+  <view wx:if="{{code==4003}}" class='no-yhq'>未找到优惠券信息</view>
+  <!--优惠券-->
+  <view wx:for="{{Coupon}}">
+    <view wx:for="{{item.coupons}}" wx:for-item="coupons" class='Coupon-view'>
+      <view class='Coupon'>
+        <view class='img-view'>
+          <image src='{{item.preview}}'>
+          </image>
+        </view>
+        <view class='functional'>
+
+          <view class='price'>
+            <block wx:if="{{coupons.type==0}}">
+              <em>¥</em>
+              <strong>{{coupons.value}}</strong>
+            </block>
+            <block wx:else>
+              <strong>{{coupons.value}}</strong>
+              <em>折</em>
+            </block>
+
+            <span>满{{coupons.moneyThreshold }}可用
+            </span>
+          </view>
+
+          <view class='range'>
+            <span>{{coupons.title}}</span>
+          </view>
+
+          <view class='date'>
+            <block wx:if="{{coupons.type==0}}">
+              <span>{{coupons.dateStart}}-{{coupons.dateEnd}}</span>
+            </block>
+            <block wx:else>
+              <span>领取生效</span>
+            </block>
+          </view>
+
+          <view class='progress'>
+            <span>已抢{{filters.toFix((coupons.numberTotal-coupons.laveTotal)/coupons.numberTotal*100)}}%</span>
+            <progress percent="{{filters.toFix((coupons.numberTotal-coupons.laveTotal)/coupons.numberTotal*100)}}" active="true" />
+          </view>
+        </view>
+
+        <view class='receive'>
+          <view class='inner-receive'>
+            <text bindtap='getCoupon' data-CouponId='{{coupons.id}}' data-storeid='{{item.id}}'>{{yhq.text}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

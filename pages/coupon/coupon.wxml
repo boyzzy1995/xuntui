@@ -1,0 +1,54 @@
+<!--pages/coupon/coupon.wxml-->
+<view class='yhq-container'>
+  <view wx:if="{{code==4003}}" class='no-yhq'>未找到优惠券信息</view>
+  <!--优惠券-->
+  <view wx:for="{{Coupon}}">
+    <view class='Coupon-view' wx:for="{{item.userCoupons}}" wx:for-item="coupons">
+      <view class='Coupon'>
+
+        <view class='img-view'>
+          <image src='{{item.preview}}'>
+          </image>
+        </view>
+
+        <view class='functional'>
+
+          <view class='price'>
+            <block wx:if="{{coupons.couponVO.type==0}}">
+              <em>¥</em>
+              <strong>{{coupons.couponVO.value}}</strong>
+            </block>
+            <block wx:else>
+              <strong>{{coupons.couponVO.value}}</strong>
+              <em>折</em>
+            </block>
+
+            <span>满{{coupons.couponVO.moneyThreshold }}可用
+            </span>
+
+          </view>
+
+          <view class='range'>
+            <span>{{coupons.couponVO.title}}</span>
+          </view>
+
+          <view class='progress'>
+            <block wx:if="{{coupons.couponVO.effectiveRule==0}}">
+              <span>{{coupons.couponVO.dateStart}}-{{coupons.couponVO.dateEnd}}</span>
+            </block>
+            <block wx:else>
+              <span>{{coupons.userCouponVO.createTime}}-{{coupons.userCouponVO.endTime}}</span>
+            </block>
+          </view>
+        </view>
+
+        <view class='receive'>
+          <view class='inner-receive'>
+            <text bindtap='use'>立即使用</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

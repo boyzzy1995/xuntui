@@ -1,0 +1,361 @@
+/* pages/JionActivity/JionActivity.wxss */
+
+.body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.TopBox {
+  width: 96%;
+  box-shadow: 1px 1px 6px 2px #eee;
+  border-radius: 5px;
+}
+
+.NameView {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NameViewLeft {
+  display: flex;
+  align-items: center;
+}
+
+.HeadPortrait {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin: 0 10rpx;
+}
+
+.HeadPortraitImg {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.AccountName {
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+
+.AccountDeatil {
+  font-size: 26rpx;
+  width: 140rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Time {
+  width: 300rpx;
+  font-size: 26rpx;
+}
+
+.Price {
+  font-size: 26rpx;
+  width: 130rpx;
+  text-align: right;
+}
+
+.NameViewRight {
+  display: flex;
+  align-items: center;
+  padding-right: 10rpx;
+}
+
+.ActivityRules {
+  background-color: #8a8a8a;
+  color: #fff;
+  padding: 10rpx;
+  font-size: 26rpx;
+  border-radius: 5px;
+}
+
+.ActivityListImg {
+  height: 405rpx;
+  width: 100%;
+}
+
+.ProductImgView {
+  height: 405rpx;
+  background-color: pink;
+  border-radius: 5px;
+}
+
+.ActivityTitleContent {
+  display: flex;
+  font-size: 36rpx;
+  font-weight: 500;
+  padding: 10rpx;
+}
+
+.ActivityIcon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10rpx;
+}
+
+.LeftIconContainer {
+  display: flex;
+}
+
+.RightIconContainer {
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+
+.IconContainer {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.IconContainerNext {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30rpx;
+  background-color: #fff;
+}
+
+.AcitivityIconEntity {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.ProgressView {
+  padding: 20rpx 10rpx;
+}
+
+.FriendShipTeamIcon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.PriceView {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 20rpx;
+}
+
+.LeftPrice {
+  font-size: 30rpx;
+}
+
+.RightPrice {
+  font-size: 30rpx;
+}
+
+.InviteFriendView {
+  width: 96%;
+  padding: 40rpx 0;
+}
+
+.LeftTimeView {
+  width: 96%;
+  padding: 0 0 40rpx 0;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.UseView {
+  padding-bottom: 40rpx;
+}
+
+.UseButton {
+  background-color: #ff7f00;
+  font-size: 30rpx;
+  width: 220rpx;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.FriendsGroupView {
+  width: 96%;
+}
+
+.HeadTitle {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40rpx;
+}
+
+.LineImgView {
+  display: flex;
+  align-items: center;
+}
+
+.HeadTitleWords {
+  font-size: 36rpx;
+}
+
+.LineImg {
+  width: 240rpx;
+  height: 20rpx;
+}
+
+.FriendsPortials {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40rpx;
+}
+
+.PortialsIcon {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: pink;
+}
+
+.OtherActivity {
+  width: 96%;
+  height: 400rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.LineImgSecond {
+  width: 180rpx;
+  height: 20rpx;
+}
+
+.ButtonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ButtonGroup button {
+  background-color: #add8e6;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.ActivityPriceBtn {
+  width: 250rpx;
+}
+
+.BottomButtonGroup {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.ShareButton {
+  border-radius: 0;
+  background-color: #8a8a8a;
+  color: #fff;
+  width: 40%;
+  font-size: 30rpx;
+}
+
+.BarCodeImg {
+  margin-top: 40rpx;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.StartActivity {
+  border: 1px solid #eee;
+  width: 40%;
+  border-radius: 0;
+  font-size: 30rpx;
+  background-color: #fff;
+}
+
+/*分享框*/
+
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 90%;
+  height: 415rpx;
+  background-color: #fff;
+}
+
+.modal-btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 2rpx solid rgba(7, 17, 27, 0.1);
+}
+
+.cancel-btn, .confirm-btn {
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.cancel-btn {
+  border-right: 2rpx solid rgba(7, 17, 27, 0.1);
+}
+
+.text-view {
+  text-align: center;
+  font-size: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid rgba(7, 17, 27, 0.1);
+}
+
+.customBtn {
+  line-height: 100rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+
+/*生成图*/
+
+/* mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.canvas-box {
+  position: fixed;
+  /* top: 999999rpx; */
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

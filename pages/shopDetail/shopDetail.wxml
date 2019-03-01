@@ -1,0 +1,42 @@
+<!--pages/shopDetail/shopDetail.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{data.explodedViews}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" class='topImg'/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='body'>
+<view class='title'>
+<text>{{data.name}}</text>
+</view>
+<view class='content' style='margin-top:20rpx;'>
+<text>投放价格：{{data.price}}</text>
+</view>
+<view class='content' wx:for="{{data.items}}">
+<text>{{item.name}}：{{item.quantity}}</text>
+</view>
+<view style='margin-top:30rpx;padding-bottom:20rpx;'>
+<map
+      id="myMap"
+      style="width: 100%; height: 300rpx;"
+      latitude="{{data.latitude}}"
+      longitude="{{data.longitude}}"
+      markers="{{markers}}"
+      show-location
+      bindtap="openMap"
+    ></map>
+</view>
+
+<!-- <view class='title1' wx:if="{{data.detailViews&&data.detailViews.length>0}}">
+<text>--广告位展示--</text>
+</view> -->
+<view class='recommendViewView' wx:for="{{data.detailViews}}">
+<view class='recommendView'>
+<image src='{{item}}' class='recommendImg'></image>
+</view>
+</view>
+</view>
+<view style='height:100rpx;'></view>
+<button class="submit" bindtap='submit'>我要投放广告</button>

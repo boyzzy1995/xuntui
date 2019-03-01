@@ -1,0 +1,2 @@
+<!--pages/outer/outer.wxml-->
+<web-view src="https://www.51xuntui.com/h5dadishu/index.html?token={{token}}&userId={{userId}}" bindmessage='msgHandle'></web-view>

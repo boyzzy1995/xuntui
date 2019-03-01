@@ -1,0 +1,44 @@
+<view class='menu'>
+  <view bindtap="ifLogin" data-url="/pages/index/index" data-flag="index" hover-class="navigator-hover">
+    <image src='{{homeUrl}}' class='menu-image'></image>
+    <span style='color:{{homeColor}}'>活动首页</span>
+  </view>
+
+  <!-- <view bindtap="ifLogin" data-url="/pages/StartActivity/ChoiceTools/ChoiceTools" data-flag="activity" hover-class="other-navigator-hover">
+    <image src='{{StartActivityUrl}}' class='menu-image'></image>
+    <span style='color:{{StartActivityColor}}'>发起活动</span>
+  </view> -->
+
+  <!-- <view bindtap="ifLogin" data-url="/pages/throwIn/throwIn" data-flag="adv" hover-class="other-navigator-hover">
+    <image src='{{advUrl}}' class='menu-image'></image>
+    <span style='color:{{advColor}}'>我要推广</span>
+  </view> -->
+
+  <view bindtap="ifLogin" data-url="/pages/StartActivity/ChoiceTools/ChoiceTools" data-flag="activity" hover-class="other-navigator-hover">
+    <image src='{{StartActivityUrl}}' class='menu-image'></image>
+    <span style='color:{{StartActivityColor}}'>发起活动</span>
+  </view>
+
+  <block wx:if="{{isStore==false}}">
+    <!-- <view bindtap="toInvite" data-url="/pages/StartActivity/ChoiceTools/ChoiceTools" data-flag="activity" hover-class="other-navigator-hover">
+      <image src='{{StartActivityUrl}}' class='menu-image'></image>
+      <span style='color:{{StartActivityColor}}'>发起活动</span>
+    </view> -->
+    <view bindtap="ifLogin" data-url="/pages/invite/invite" data-flag="jion" hover-class="other-navigator-hover">
+      <image src='{{jionUrl}}' class='menu-image' style='width:44rpx;'></image>
+      <span style='color:{{jionColor}}'>加入寻推</span>
+    </view>
+  </block>
+
+  <block wx:if="{{isStore==true}}">
+    <view bindtap="ifLogin" data-url="/pages/NewMyShop/MyShop" data-flag="shop" hover-class="other-navigator-hover">
+      <image class='menu-image' src='{{shopUrl}}'></image>
+      <span style='color:{{shopColor}}'>我的店铺</span>
+    </view>
+  </block>
+
+  <view bindtap="ifLogin" data-url="/pages/person/person" data-flag="person" hover-class="other-navigator-hover">
+    <image class='menu-image' src='{{personUrl}}'></image>
+    <span style='color:{{personColor}}'>我的寻推</span>
+  </view>
+</view>

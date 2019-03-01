@@ -1,0 +1,17 @@
+/* pages/login/login.wxss */
+.imageView{
+  text-align: center;
+}
+.imageView image{
+  border-radius:50%;
+  height:300rpx;
+  width:300rpx;
+  margin-top:50rpx;
+}
+.button{
+  width:50%;
+  margin-top:200rpx;
+  color:white;
+  background-color:#1bb9f3;
+
+}

@@ -1,0 +1,2 @@
+<!--pages/outer/wakuangren.wxml-->
+<web-view src="https://www.51xuntui.com/wakuangren/index.html" bindmessage='msgHandle'></web-view>

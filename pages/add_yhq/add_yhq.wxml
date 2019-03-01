@@ -1,0 +1,85 @@
+<!--pages/index/yhq/add_yhq/add_yhq.wxml-->
+<image src='/static/1.jpeg' class='topImg'></image>
+<view class='basic-info-view'>
+  <text class='basic-info'>基本信息</text>
+</view>
+<view class='inputView'>
+  <text>优惠券名称</text>
+  <input bindinput="input" placeholder-class="pltext" id='title' value='{{submitData.title}}' placeholder='优惠券名称'></input>
+</view>
+<view class='inputView'>
+  <text>优惠券副标题</text>
+  <input bindinput="input" placeholder-class="pltext" id="subtitle" value='{{submitData.subtitle}}' placeholder='优惠券副标题'></input>
+</view>
+<view class='inputView'>
+  <text>优惠类型</text>
+  <picker value="{{index}}" range="{{type_array}}" bindchange="bindPickerChange">
+    <view class="picker">
+      {{type_array[index]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>满</text>
+  <input bindinput="input" placeholder-class="pltext" id="moneyThreshold" value='{{submitData.moneyThreshold}}' placeholder='填写价格'></input>
+  <text>减/打</text>
+  <input bindinput="input" placeholder-class="pltext" id="value" value='{{submitData.value}}' placeholder='价格/折扣'></input>
+</view>
+<view class='inputView'>
+  <text>发放数量</text>
+  <input bindinput="input" placeholder-class="pltext" id="numberTotal" value='{{submitData.numberTotal}}' placeholder='发放数量'></input>
+</view>
+<view class='inputView'>
+  <text>使用说明</text>
+  <textarea bindinput="input" placeholder='使用说明' auto-height='true' style="color:#999;width:63%;" id="description"  value='{{submitData.description}}' />
+</view>
+<view class='bar'></view>
+
+<!--基本规则-->
+<view class='basic-info-view'>
+  <text class='basic-info'>基本规则</text>
+</view>
+<view class='inputView'>
+  <text>每人限领</text>
+  <input bindinput="input" placeholder-class="pltext" id='numberPersonMax' value='{{submitData.numberPersonMax}}' placeholder='次数'></input>
+</view>
+<view class='inputView'>
+  <text>有效期</text>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}" wx:key="">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+</view>
+<view class='inputView' style='display:{{fixdisplay}}'>
+  <text style='width:90%'>固定日期</text>
+  <picker mode="date" value="{{fixdate}}" start="{{pickertimestrat}}" end="2099-12-31" bindchange="bindFixDateChange">
+    <view class="picker">
+      {{fixdate}}
+    </view>
+  </picker>
+  <text style='text-align:center;width:25%'>至</text>
+  <picker mode="date" value="{{activedate}}" start="{{pickertimestrat}}" end="2099-12-31" bindchange="bindActiveDateChange">
+    <view class="picker">
+      {{activedate}}
+    </view>
+  </picker>
+</view>
+
+<view class='inputView' style='display:{{activedisplay}}'>
+  <text style='width:40%'>有效天数</text>
+  <input bindinput="input" placeholder-class="pltext" id='expireDays' value='{{submitData.expireDays}}' placeholder='天数'></input>
+</view>
+<!--<view class='inputView' style='border:none;text-align:center;'>
+  <text bindtap='choose' style='width:100%;margin-top:30rpx;background-color:rgb(146,146,146);color:white;padding:20rpx 0;'>点击上传店铺图片，共{{pics.length}}张</text>
+</view>
+<view class='prompt'>
+  <text>提交信息后，工作人员会与您联系，对接广告投放事宜</text>
+</view>
+<view class='recommendViewView' wx:for="{{pics}}">
+  <view class='recommendView'>
+    <image src="{{'https://img.jinghangkuajing.com/temporary/'+item+'-compress'}}" class='recommendImg'></image>
+  </view>
+</view>-->
+<view class='bar'></view>
+<button class="submit" bindtap='putInfo'>提交信息</button>

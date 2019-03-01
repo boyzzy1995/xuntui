@@ -1,0 +1,72 @@
+<!--pages/person/person.wxml-->
+<view style='padding-bottom:90rpx;'>
+
+  <view class='topImage'>
+    <image src="{{url}}"></image>
+    <text>{{name}}</text>
+  </view>
+
+  <block wx:if="{{isStore==true}}">
+    <view class='li' bindtap='hexiao'>
+      <text>扫码核销</text>
+      <image src='../../static/arrow.png'></image>
+    </view>
+  </block>
+
+  <block wx:if="{{isStore==false}}">
+    <view class='li' bindtap=''>
+      <text>我的寻推积分</text>
+      <text style='width:30rpx;'>{{score}}</text>
+    </view>
+    <!-- <view class='li' bindtap='payIntegral'>
+      <text>支付积分</text>
+      <image src='../../static/arrow.png'></image>
+    </view> -->
+    <view class='li' bindtap='myCoupon'>
+      <text>我参与的活动</text>
+      <image src='../../static/arrow.png'></image>
+    </view>
+  </block>
+
+  <view class='li' bindtap='about'>
+    <text>关于寻推</text>
+    <image src='../../static/arrow.png'></image>
+  </view>
+  <view class='li' bindtap='toKefu'>
+    <button open-type="contact" class='toKefu'>进入客服会话</button>
+    <text style='float:none;font-weight:normal'>在线客服</text>
+    <!-- <text style='float:right;font-weight:600'>></text> -->
+    <image src='../../static/arrow.png'></image>
+  </view>
+  <!-- <view class='li' bindtap='toInvite'>
+    <text>我有广告位</text>
+    <image src='../../static/arrow.png'></image>
+  </view> -->
+  <view class='li' bindtap='toIndex'>
+    <text>我要品牌/推广服务</text>
+    <image src='../../static/arrow.png'></image>
+  </view>
+  <view class='li' bindtap='callPhone'>
+    <text>商务合作</text>
+    <image src='../../static/arrow.png'></image>
+  </view>
+
+  <block wx:if="{{isStore==false}}">
+    <view style='height:10rpx;background-color:#eee'></view>
+    <view class='li' bindtap='storeLogin'>
+      <text>商家登入</text>
+      <image src='../../static/arrow.png'></image>
+    </view>
+  </block>
+
+  <block wx:if="{{isStore==true}}">
+    <view style='height:10rpx;background-color:#eee'></view>
+    <view class='li' bindtap='exit'>
+      <text>退出登入</text>
+      <image src='../../static/arrow.png'></image>
+    </view>
+  </block>
+</view>
+<view class='bottom'>
+  <menu person="person" id="component"></menu>
+</view>

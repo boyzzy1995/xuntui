@@ -1,0 +1,33 @@
+<!--pages/categories/categories.wxml-->
+<!--<view wx:for="{{recommends}}" class='recommendView' data-id='{{item.id}}' data-name="{{item.name}}" bindtap='toDetail' wx:key="{{item.id}}">
+<image src='{{item.preview}}' class='recommendImg'></image>
+</view>-->
+<!--pages/coupon/coupon.wxml-->
+<view class='yhq-container'>
+  <!--优惠券-->
+  <view wx:for="{{stores}}" wx:key="">
+    <view class='Coupon-view'>
+      <view class='Coupon' bindtap='gotoDetail'>
+
+        <view class='img-view'>
+          <image src='{{item.preview}}'>
+          </image>
+        </view>
+
+        <view class='functional'>
+
+          <view class='price'>
+            <strong>{{item.name}}</strong>
+          </view>
+
+          <view class='progress'>
+            <span>这是说明情况这是说明情况这是说明情况这是说明情况这是说明情况这是说明情况</span>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </view>
+
+</view>

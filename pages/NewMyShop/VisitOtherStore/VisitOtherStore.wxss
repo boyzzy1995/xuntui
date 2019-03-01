@@ -1,0 +1,382 @@
+/* pages/NewMyShop/MyShop.wxss */
+
+/*头部*/
+
+.Container {
+  height:600rpx;
+}
+
+.Panel {
+  height: 421.8rpx;
+}
+
+.BCKImg {
+  height: 421.8rpx;
+  width: 100%;
+}
+
+.Icon {
+  border-radius: 50%;
+  height: 200rpx;
+  width: 200rpx;
+  margin: 0 auto;
+  margin-top: -100rpx;
+}
+
+.IconImg {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+
+.CompanyNamePanel {
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #8a8a8a;
+  padding: 20rpx 0;
+}
+
+.GrayLine {
+  background-color: #eee;
+  height: 10rpx;
+}
+
+/*地址栏*/
+
+.AddressPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+}
+
+.LeftImgPanel {
+  width: 500rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.RightPanel {
+  display: flex;
+  width: 200rpx;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.LocationImg {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.LocationWords {
+  font-size: 30rpx;
+  width: 70%;
+}
+
+.EWM {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.EWMImg {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 0;
+}
+
+/*商家活动导航栏*/
+
+.NavBar {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: space-between;
+  font-size: 30rpx;
+  padding:0 40rpx;
+
+}
+
+.NavSelect {
+  /* width: 33%; */
+  text-align: center;
+  color: red;
+  padding: 20rpx 0;
+  border-bottom: 3px solid red;
+  font-weight: 500;
+  font-size: 30rpx;
+  width:150rpx;
+
+}
+
+.NavNonSelect {
+  /* width: 33%; */
+  text-align: center;
+  padding: 20rpx 0;
+   font-size: 30rpx;
+   width:150rpx;
+
+}
+
+/*正在进行的商家活动*/
+
+.ContentNull {
+  font-size: 26rpx;
+  color: #8a8a8a;
+  height: 600rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.Activity {
+  padding: 20rpx 20rpx;
+  padding-bottom: 0;
+}
+
+.ActivityImg {
+  height: 400rpx;
+  border-radius: 5px;
+  position: relative;
+}
+
+.ActivityListImg {
+  height: 400rpx;
+  width: 100%;
+}
+
+.LeftGoods {
+  background-color: red;
+  padding: 10rpx;
+  color: #fff;
+  width: 200rpx;
+  text-align: center;
+  font-size: 30rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ActivityTitleContent {
+  display: flex;
+  font-size: 36rpx;
+  font-weight: 500;
+  padding: 10rpx;
+  height: 62rpx;
+  align-items: center;
+}
+
+.ActivityIcon {
+  display: flex;
+  height: 90rpx;
+}
+
+.LeftIconContainer {
+  width: 50%;
+  display: flex;
+}
+
+.RightIconContainer {
+  width: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+
+.IconContainer {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.IconContainerNext {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30rpx;
+  background-color: #fff;
+}
+
+.AcitivityIconEntity {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+button::after {
+  border: none;
+}
+
+.StyleJionBtn {
+  width: 250rpx;
+  border-radius: 40px;
+  margin: 0;
+  background-color: #ff3030;
+  border: 0;
+  color: white;
+  font-size: 26rpx;
+}
+
+/*活动价格*/
+
+.ActivityPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DownPrice {
+  font-size: 32rpx;
+  color: red;
+  font-weight: 500;
+}
+
+.InitPrice {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+swiper {
+  height: 300rpx;
+}
+
+.topImg {
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.title {
+  text-align: center;
+  box-shadow: 0px 0px 5px #eee;
+}
+
+.title text {
+  font-family: 'fzzzh', sans-serif;
+}
+
+.text-view {
+  padding: 20rpx 0 20rpx 0;
+  color: #8a8a8a;
+  font-size: 24rpx;
+}
+
+.text-view-line {
+  font-weight: 300;
+}
+
+.titleBar {
+  width: 100%;
+  height: 15rpx;
+  background-color: rgb(241, 241, 241);
+}
+
+/*商家信息*/
+
+.StoreInfoPanel {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.InputView {
+  width: 88%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.InputTxt {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+}
+
+.InputBoxView {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.ActivityPriceBtn {
+  width: 250rpx;
+}
+
+.ArrowIcon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.EnvironmentImgView {
+  width: 88%;
+  padding: 20rpx 0;
+}
+
+.EnvironmentImgTitle {
+  font-size: 30rpx;
+  padding: 0 10rpx;
+}
+
+.EnvironmentImg {
+  height: 371rpx;
+  margin: 20rpx 0 0 0;
+}
+
+.EnvironmentImgEntity {
+  width: 100%;
+  height: 371rpx;
+}
+
+/*核销管理*/
+
+.HeXiaoView {
+  width: 88%;
+  padding: 20rpx 0;
+}
+
+.HeXiaoTitle {
+  font-size: 30rpx;
+  padding: 0 10rpx;
+}
+
+.HeXiao {
+  height: 300rpx;
+  margin: 20rpx 0 0 0;
+  font-size: 30rpx;
+}
+
+/*底部*/
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottomLine {
+  font-size: 24rpx;
+  color: #8a8a8a;
+  padding: 20rpx 0;
+  text-align: center;
+}

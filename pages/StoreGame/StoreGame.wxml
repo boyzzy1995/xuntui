@@ -1,0 +1,25 @@
+<!--pages/selectGame/selectGame.wxml-->
+<view class="game-container">
+  <view class="inside-container"  data-src="outer" wx:for="{{gameList}}" wx:key="">
+    <view class='img' bindtap='showDialogBtn' data-gameId="{{item.id}}">
+      <image src='https://img.jinghangkuajing.com/advertising/resource/h5-banner.png-compress'></image>
+    </view>
+    <view class='bottom-show'>
+      <span>查看详细规则>></span>
+    </view>
+  </view>
+</view>
+<!--弹窗-->
+<view class="modal-mask"  catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">发起小游戏</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" id="description" type="text"  bindinput="inputChange" class="input" placeholder="描述一下这个游戏"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

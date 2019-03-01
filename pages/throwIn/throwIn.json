@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我要品牌/推广服务",
+  "usingComponents": {
+    "menu": "/component/menu/menu"
+  }
+}

@@ -1,0 +1,5 @@
+<!--pages/login/login.wxml-->
+<view class='imageView'>
+<image src='../../static/logo.png'></image>
+</view>
+<button class='button' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>

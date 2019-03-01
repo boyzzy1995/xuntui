@@ -1,0 +1,22 @@
+<!--pages/login/login/login.wxml-->
+
+<view class='content'>
+  <view class='login-logo'>
+     <image src="../../../static/logo.png" class="img-logo"></image>
+  </view>
+  <view class='login-input'>
+    <view class='input-view'>
+      
+      <input type='text' bindinput="input" placeholder='账号' id="username" class='input-box' value='{{submitData.username}}'></input>
+    </view>
+    <view class='input-view'>
+      <input type='password' bindinput="input" placeholder='密码' id="password" class='input-box' value='{{submitData.password}}'></input>
+    </view>
+  </view>
+  <view class='submit-box'>
+   <button bindtap='submit' class='btn-confirm'>确定</button>
+  </view>
+  <view class='forget-box' bindtap='toRegist'>
+    注册寻推账号
+  </view>
+</view>

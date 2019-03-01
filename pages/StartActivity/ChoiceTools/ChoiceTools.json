@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "营销工具",
+  "usingComponents": {
+    "menu": "/component/menu/menu",
+    "Picker":"/component/picker/picker"
+  }
+}

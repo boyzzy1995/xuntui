@@ -1,0 +1,432 @@
+<wxs module="filters" src="import.wxs"></wxs>
+<view class='body' style='padding-bottom:90rpx'>
+  <!--顶部滚动窗口-->
+  <!-- <Picker id="Picker"></Picker> -->
+  <image src='https://img.jinghangkuajing.com/advertising/resource/index.jpg-compress' style='height:100px;width:100%;'></image>
+
+  <!--定位-->
+  <view class='LocationPanel'>
+    <image src='../../images/index_loc.png' class='LocationPanelImg'></image>
+    <view class='LocationAddress' bindtap='toLocationSearch'>{{placeData.address}}</view>
+  </view>
+
+  <!--精选推荐标题-->
+  <!-- <view class='CarefullyChosenView'>
+    <view class='CarefullyChosenWords'>精选推荐</view>
+    <view class='SwiperView'>
+      <swiper style="height:50rpx;" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="{{vertical}}">
+        <block wx:for="{{WordsList}}" wx:key="" wx:for-index="index">
+          <swiper-item>
+            {{item}}
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view> -->
+
+  <!-- 精选推荐内容
+  <view class='CarefullyChosenContent'>
+    <view class='CarefullyChosenContentBox'>
+      <view class='Img'>
+      </view>
+      <view class='Content'>
+        <view class='Name'>{{ProductList.Name}}</view>
+        <view class='Descripe'>{{ProductList.Descripe}}</view>
+        <view class='Price'>{{ProductList.Price}}
+          <em style="font-size:40rpx;line-height:140rpx;">￥</em>
+        </view>
+        <view class='BtnJion'>
+          <button class='StyleJionBtn'>我要参与</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--精选推荐图标
+  <view class='Icon'>
+    <block wx:for="{{IconList}}" wx:key="{{index}}">
+      <view class='{{item.style}}' style='background-color:{{item.color}}' data-index="{{index}}" bindtap='IconClick'>
+
+      </view>
+    </block>
+  </view> -->
+
+  <!--筛选-->
+  <view class='filter'>
+    <picker bindchange="bindPickerChange" value="{{activityType}}" range="{{array}}">
+      <view class="picker">
+        活动类型:{{array[activityType]}}<image src='/images/trangle.png' style='width:20rpx;height:20rpx;margin-left:10rpx;'></image>
+      </view>
+    </picker>
+  </view>
+
+  <block wx:if="{{activityType==0}}">
+    <!--商家活动标题-->
+    <view class='HeadTitle'>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+      <view class='HeadTitleWords'>
+        砍价活动
+      </view>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+    </view>
+
+    <!--全部商家活动导航-->
+    <view class='NavBar'>
+      <block wx:for="{{NavList}}" wx:key="{{index}}">
+        <view class='{{item.style}}' data-index="{{index}}" bindtap="navTap">
+          {{item.title}}
+        </view>
+      </block>
+    </view>
+
+    <!--正在进行和即将开始的商家活动-->
+    <view class='ContentNull' style='display:{{NullTip}}'>
+      暂无任何商家活动
+    </view>
+    <block wx:for="{{ActivityList}}" wx:key="">
+      <view class='Activity' wx:if="{{item.state==NavIndex}}">
+        <view class='ActivityImg'>
+          <image src="{{item.preview}}" class='ActivityListImg'></image>
+          <block wx:if="{{item.state==0}}">
+            <view class='LeftGoods'>正在进行</view>
+          </block>
+          <block wx:if="{{item.state==1}}">
+            <view class='LeftGoods'>即将开始</view>
+          </block>
+        </view>
+        <view class='ActivityTitleContent'>
+          <view class='BrandName'></view>
+          <view class='ProductName'>
+            {{item.title}}
+            <block wx:if="{{item.type==2001||item.type==2002}}">
+              <text style='font-size:26rpx;color:#8a8a8a;'>店内消费先砍价再买单</text>
+            </block>
+          </view>
+        </view>
+        <view class='ActivityIcon'>
+          <view class='LeftIconContainer'>
+            <block wx:for="{{item.avatars}}" wx:key="{{index}}">
+              <view wx:if="{{index==0}}" class='IconContainer'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+              <view wx:if="{{index!=0}}" class='IconContainerNext'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+            </block>
+          </view>
+          <view class='RightIconContainer'>
+            {{item.number}}人正在参与
+          </view>
+        </view>
+        <view class='ActivityPrice'>
+          <block wx:if="{{item.type==2001||item.type==2002}}">
+            <view class='DownPrice' style='color:#8a8a8a'>{{item.address}}</view>
+          </block>
+          <block wx:else>
+            <view class='DownPrice'>折后价￥{{item.minValue}}</view>
+            <view class='InitPrice'>原价￥{{item.originalPrice}}</view>
+          </block>
+
+          <view class='ActivityPriceBtn'>
+            <block wx:if="{{item.type==2001||item.type==2002}}">
+              <button class='StyleJionBtn' disabled='disabled' data-id="{{item.id}}" bindtap='toJionActivity' wx:if="{{item.state!=1}}">到店参与</button>
+            </block>
+            <block wx:else>
+              <button class='StyleJionBtn' data-id="{{item.id}}" bindtap='toJionActivity' wx:if="{{item.state!=1}}">我要参与</button>
+            </block>
+
+          </view>
+        </view>
+        <view style='height:20rpx; border-bottom:1px solid #eee;'></view>
+      </view>
+
+      <!--显示全部活动-->
+      <view class='Activity' wx:if="{{NavIndex==2&&NavAll}}">
+        <view class='ActivityImg'>
+          <image src="{{item.preview}}" class='ActivityListImg'></image>
+          <block wx:if="{{item.state==0}}">
+            <view class='LeftGoods'>正在进行</view>
+          </block>
+          <block wx:if="{{item.state==1}}">
+            <view class='LeftGoods'>即将开始</view>
+          </block>
+        </view>
+        <view class='ActivityTitleContent'>
+          <view class='BrandName'></view>
+          <view class='ProductName'>
+            {{item.title}}
+            <block wx:if="{{item.type==2001||item.type==2002}}">
+              <text style='font-size:26rpx;color:#8a8a8a;'>店内消费先砍价再买单</text>
+            </block>
+          </view>
+        </view>
+        <view class='ActivityIcon'>
+          <view class='LeftIconContainer'>
+            <block wx:for="{{item.avatars}}" wx:key="{{index}}">
+              <view wx:if="{{index==0}}" class='IconContainer'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+              <view wx:if="{{index!=0}}" class='IconContainerNext'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+            </block>
+          </view>
+          <view class='RightIconContainer'>
+            {{item.number}}人正在参与
+          </view>
+        </view>
+        <view class='ActivityPrice'>
+          <block wx:if="{{item.type==2001||item.type==2002}}">
+            <view class='DownPrice' style='color:#8a8a8a'>{{item.address}}</view>
+          </block>
+          <block wx:else>
+            <view class='DownPrice'>折后价￥{{item.minValue}}</view>
+            <view class='InitPrice'>原价￥{{item.originalPrice}}</view>
+          </block>
+          <view class='ActivityPriceBtn'>
+            <block wx:if="{{item.type==2001||item.type==2002}}">
+              <button class='StyleJionBtn' disabled='disabled' data-id="{{item.id}}" bindtap='toJionActivity' wx:if="{{item.state!=1}}">到店参与</button>
+            </block>
+            <block wx:else>
+              <button class='StyleJionBtn' data-id="{{item.id}}" bindtap='toJionActivity' wx:if="{{item.state!=1}}">我要参与</button>
+            </block>
+          </view>
+        </view>
+        <view style='height:20rpx; border-bottom:1px solid #eee;'> </view>
+      </view>
+    </block>
+  </block>
+
+  <block wx:if="{{activityType==1}}">
+    <!--商家活动标题-->
+    <view class='HeadTitle'>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+      <view class='HeadTitleWords'>
+        投票活动
+      </view>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+    </view>
+
+    <!--全部投票活动导航-->
+    <view class='NavBar'>
+      <block wx:for="{{VoteNavList}}" wx:key="{{index}}">
+        <view class='{{item.style}}' data-index="{{index}}" bindtap="VotenavTap">
+          {{item.title}}
+        </view>
+      </block>
+    </view>
+
+    <!--正在进行和即将开始的投票活动-->
+    <view class='ContentNull' style='display:{{VoteNullTip}}'>
+      暂无任何商家活动
+    </view>
+    <block wx:for="{{VoteActivityList}}" wx:key="">
+      <view class='Activity' wx:if="{{item.state==VoteNavIndex}}">
+        <view class='ActivityImg'>
+          <image src="{{item.preview}}" class='ActivityListImg'></image>
+          <block wx:if="{{item.state==0}}">
+            <view class='LeftGoods'>正在进行</view>
+          </block>
+          <block wx:if="{{item.state==1}}">
+            <view class='LeftGoods'>即将开始</view>
+          </block>
+        </view>
+        <view class='ActivityTitleContent'>
+          <view class='BrandName'></view>
+          <view class='ProductName'>{{item.title}}</view>
+        </view>
+        <view class='ActivityIcon'>
+          <view class='LeftIconContainer'>
+            <block wx:for="{{item.avatars}}" wx:key="{{index}}">
+              <view wx:if="{{index==0}}" class='IconContainer'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+              <view wx:if="{{index!=0}}" class='IconContainerNext'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+            </block>
+          </view>
+          <view class='RightIconContainer'>
+            {{item.number}}人正在参与
+          </view>
+        </view>
+        <view class='ActivityPrice'>
+          <view wx:if="{{item.type==0}}" class='InitPrice'>参与有奖</view>
+          <view class='ActivityPriceBtn'>
+            <button class='StyleJionBtn' data-id="{{item.id}}" bindtap='toJionVoteActivity' wx:if="{{item.state!=1}}">我要参与</button>
+          </view>
+        </view>
+        <view style='height:20rpx; border-bottom:1px solid #eee;'></view>
+      </view>
+      <!--显示全部活动-->
+      <view class='Activity' wx:if="{{VoteNavIndex==2&&VoteNavAll}}">
+        <view class='ActivityImg'>
+          <image src="{{item.preview}}" class='ActivityListImg'></image>
+          <block wx:if="{{item.state==0}}">
+            <view class='LeftGoods'>正在进行</view>
+          </block>
+          <block wx:if="{{item.state==1}}">
+            <view class='LeftGoods'>即将开始</view>
+          </block>
+        </view>
+        <view class='ActivityTitleContent'>
+          <view class='BrandName'></view>
+          <view class='ProductName'>{{item.title}}</view>
+        </view>
+        <view class='ActivityIcon'>
+          <view class='LeftIconContainer'>
+            <block wx:for="{{item.avatars}}" wx:key="{{index}}">
+              <view wx:if="{{index==0}}" class='IconContainer'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+              <view wx:if="{{index!=0}}" class='IconContainerNext'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+            </block>
+          </view>
+          <view class='RightIconContainer'>
+            {{item.number}}人正在参与
+          </view>
+        </view>
+        <view class='ActivityPrice'>
+          <view wx:if="{{item.type==0}}" class='InitPrice'>参与有奖</view>
+          <view class='ActivityPriceBtn'>
+            <button class='StyleJionBtn' data-id="{{item.id}}" bindtap='toJionVoteActivity' wx:if="{{item.state!=1}}">我要参与</button>
+          </view>
+        </view>
+        <view style='height:20rpx; border-bottom:1px solid #eee;'> </view>
+      </view>
+    </block>
+  </block>
+
+  <block wx:if="{{activityType==2}}">
+    <!--商家报名标题-->
+    <view class='HeadTitle'>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+      <view class='HeadTitleWords'>
+        报名活动
+      </view>
+      <view class='LineImgView'>
+        <image src="../../static/Line.png" class='LineImg'></image>
+      </view>
+    </view>
+
+    <!--全部报名活动导航-->
+    <view class='NavBar'>
+      <block wx:for="{{SignNavList}}" wx:key="{{index}}">
+        <view class='{{item.style}}' data-index="{{index}}" bindtap="SignnavTap">
+          {{item.title}}
+        </view>
+      </block>
+    </view>
+
+    <!--正在进行和即将开始的投票活动-->
+    <view class='ContentNull' style='display:{{SignNullTip}}'>
+      暂无任何商家活动
+    </view>
+    <block wx:for="{{SignActivityList}}" wx:key="">
+      <view class='Activity' wx:if="{{item.info.state==SignNavIndex}}">
+        <view class='ActivityImg'>
+          <image src="{{item.info.preview}}" class='ActivityListImg'></image>
+          <block wx:if="{{item.info.state==0}}">
+            <view class='LeftGoods'>正在进行</view>
+          </block>
+          <block wx:if="{{item.info.state==1}}">
+            <view class='LeftGoods'>即将开始</view>
+          </block>
+        </view>
+        <view class='ActivityTitleContent'>
+          <view class='BrandName'></view>
+          <view class='ProductName'>{{item.info.title}}</view>
+        </view>
+        <view class='ActivityIcon'>
+          <view class='LeftIconContainer'>
+            <block wx:for="{{item.avatars}}" wx:key="{{index}}">
+              <view wx:if="{{index==0}}" class='IconContainer'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+              <view wx:if="{{index!=0}}" class='IconContainerNext'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+            </block>
+          </view>
+          <view class='RightIconContainer'>
+            {{item.count}}人正在参与
+          </view>
+        </view>
+        <view class='ActivityPrice'>
+          <view class='InitPrice'></view>
+          <view class='ActivityPriceBtn'>
+            <button class='StyleJionBtn' data-id="{{item.info.id}}" bindtap='toJionSignActivity' wx:if="{{item.info.state!=1}}">我要参与</button>
+          </view>
+        </view>
+        <view style='height:20rpx; border-bottom:1px solid #eee;'></view>
+      </view>
+      <!--显示全部活动-->
+      <view class='Activity' wx:if="{{SignNavIndex==2&&SignNavAll}}">
+        <view class='ActivityImg'>
+          <image src="{{item.info.preview}}" class='ActivityListImg'></image>
+          <block wx:if="{{item.info.state==0}}">
+            <view class='LeftGoods'>正在进行</view>
+          </block>
+          <block wx:if="{{item.info.state==1}}">
+            <view class='LeftGoods'>即将开始</view>
+          </block>
+        </view>
+        <view class='ActivityTitleContent'>
+          <view class='BrandName'></view>
+          <view class='ProductName'>{{item.info.title}}</view>
+        </view>
+        <view class='ActivityIcon'>
+          <view class='LeftIconContainer'>
+            <block wx:for="{{item.avatars}}" wx:key="{{index}}">
+              <view wx:if="{{index==0}}" class='IconContainer'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+              <view wx:if="{{index!=0}}" class='IconContainerNext'>
+                <!-- <view class='AcitivityIconEntity'></view> -->
+                <image class="AcitivityIconEntity" src="{{item}}"></image>
+              </view>
+            </block>
+          </view>
+          <view class='RightIconContainer'>
+            {{item.count}}人正在参与
+          </view>
+        </view>
+        <view class='ActivityPrice'>
+          <view class='InitPrice'></view>
+          <view class='ActivityPriceBtn'>
+            <button class='StyleJionBtn' data-id="{{item.info.id}}" bindtap='toJionSignActivity' wx:if="{{item.info.state!=1}}" bindtap='toSignIn'>我要参与</button>
+          </view>
+        </view>
+        <view style='height:20rpx; border-bottom:1px solid #eee;'> </view>
+      </view>
+    </block>
+  </block>
+  <support></support>
+</view>
+
+<view class='bottom'>
+  <menu index="index"></menu>
+</view>

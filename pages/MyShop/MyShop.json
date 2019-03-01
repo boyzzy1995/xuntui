@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的店铺",
+  "usingComponents": {
+    "menu": "/component/menu/menu"
+  }
+}

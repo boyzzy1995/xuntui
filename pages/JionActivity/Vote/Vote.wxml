@@ -1,0 +1,71 @@
+<!--pages/JionActivity/Vote/Vote.wxml-->
+<view class='RulesView'>
+  <view bindtap='toRules' class='RulesTitle'>活动规则</view>
+</view>
+<view class='TopImgView'>
+  <image src="{{list.preview}}" class='topimg'></image>
+</view>
+<view class='title'>
+  {{list.title}}
+</view>
+<view class='title' wx:if="{{list.describe.length>0}}">
+  {{list.describe}}
+</view>
+
+<!--投票内容-->
+<block wx:for="{{itemsList}}" wx:key="{{index}}">
+  <view class='projectView'>
+    <view class='firstView'>
+      <text class='text'>{{index+1}}.{{item.subtitle}}</text>
+      <button class="{{item.isClick?'votebtnClick':'votebtn'}}" data-index="{{index}}" data-itemid="{{item.id}}" bindtap='selectItem'>
+        <block wx:if="{{item.isClick}}">已选择</block>
+        <block wx:else>投票</block>
+      </button>
+    </view>
+    <view class='peopleCount'>
+      {{item.count}}已投票
+    </view>
+    <view class='img' wx:if="{{item.img.length>0}}">
+      <image src='{{item.img}}' class='itemimg'></image>
+    </view>
+  </view>
+</block>
+
+<view class='View'>
+  <block wx:if="{{list.isVoted>0}}">
+    <button type="warn" bindtap='sumbit' disabled='disabled' data-id="{{list.id}}">提交</button>
+  </block>
+  <block wx:else>
+    <button type="warn" bindtap='sumbit' data-id="{{list.id}}">提交</button>
+  </block>
+</view>
+
+<view class='View'>
+  <button type="warn" open-type='share' bindtap="callFrind">喊小伙伴一起来投票</button>
+</view>
+
+<!-- <view class='activityDesc'>我领到的折扣券</view>
+<view class='margin-top coupon'>
+  <view class='tx'></view>
+  <view class='content'>
+    <view class='title' style='margin-top:0;'>折扣券</view>
+    <view class='lefttime'>剩余时间：24.35.08失效</view>
+  </view>
+  <view class='use'>立即使用</view>
+</view> -->
+
+<view class='OtherActivity'>
+  <view class='HeadTitle'>
+    <view class='LineImgView'>
+      <image src="/static/Line.png" class='LineImgSecond'></image>
+    </view>
+    <view class='HeadTitleWords'>浏览商家其他活动</view>
+    <view class='LineImgView'>
+      <image src="/static/Line.png" class='LineImgSecond'></image>
+    </view>
+  </view>
+  <view class='ButtonGroup'>
+    <button type='default' data-storeId="{{list.storeId}}" bindtap="toStoreActivity">该商家其他活动</button>
+    <button type='default' bindtap="moreActivity">更多商家活动</button>
+  </view>
+</view>

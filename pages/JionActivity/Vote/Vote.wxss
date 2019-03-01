@@ -1,0 +1,187 @@
+/* pages/JionActivity/Vote/Vote.wxss */
+
+.RulesView {
+  height: 80rpx;
+  width: 96%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.RulesTitle {
+  float: right;
+  text-align: center;
+  background-color: #8a8a8a;
+  color: #fff;
+  font-size: 26rpx;
+  padding: 10rpx;
+  border-radius: 5px;
+}
+
+.TopImgView {
+  width: 96%;
+  margin: 0 auto;
+  height: 405rpx;
+}
+
+.topimg {
+  height: 405rpx;
+  width: 100%;
+}
+
+.title {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+  font-weight: 450;
+  height: 50rpx;
+}
+
+.projectView {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.firstView {
+  display: flex;
+  justify-content: space-between;
+  height: 66rpx;
+  align-items: center;
+}
+
+.text {
+  width: 80%;
+}
+
+.votebtn {
+  width: 20%;
+  font-size: 26rpx;
+  background-color: red;
+  color: #fff;
+}
+
+.votebtnClick {
+  width: 20%;
+  font-size: 26rpx;
+  background-color: #8a8a8a;
+  color: #fff;
+}
+
+.peopleCount {
+  text-align: right;
+  color: #8a8a8a;
+  padding-top: 20rpx;
+  font-size: 26rpx;
+}
+
+.img {
+  height: 405rpx;
+  margin-top: 20rpx;
+}
+
+.itemimg {
+  height: 405rpx;
+  width: 100%;
+}
+
+/*提交*/
+
+.View {
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.activityDesc {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.margin-top {
+  margin-top: 20rpx;
+}
+
+.coupon {
+  border: 1px solid red;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  height: 160rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tx {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: pink;
+  border-radius: 50%;
+}
+
+.content {
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.lefttime {
+  font-size: 24rpx;
+  color: #8a8a8a;
+}
+
+.use {
+  font-size: 30rpx;
+}
+
+.LineImgView {
+  display: flex;
+  align-items: center;
+}
+
+.HeadTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.HeadTitleWords {
+  font-size: 32rpx;
+}
+
+.LineImg {
+  width: 240rpx;
+  height: 20rpx;
+}
+
+.OtherActivity {
+  width: 96%;
+  height: 200rpx;
+  margin: 0 auto;
+}
+
+.LineImgSecond {
+  width: 180rpx;
+  height: 20rpx;
+}
+
+.ButtonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.ButtonGroup button {
+  background-color: #add8e6;
+  color: #fff;
+  font-size: 30rpx;
+}

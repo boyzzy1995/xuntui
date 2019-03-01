@@ -1,0 +1,544 @@
+/**index.wxss**/
+
+page {
+  font-family: Microsoft Yahei;
+  background-color: #fff;
+}
+/*定位*/
+.LocationPanel{
+  display: flex;
+  padding-top:20rpx;
+  justify-content:space-around;
+
+}
+.LocationPanelImg{
+  width: 40rpx;
+  height: 40rpx;
+}
+.LocationAddress{
+  width: 88%;
+  display: flex;
+  align-items: flex-end;
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+/*精选推荐标题*/
+.CarefullyChosenView {
+  padding: 30rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CarefullyChosenWords {
+  width: 150rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.SwiperView {
+  width: 300rpx;
+  background-color: #eee;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+/*精选推荐内容*/
+
+.CarefullyChosenContent {
+  padding: 0 20rpx;
+}
+
+.CarefullyChosenContentBox {
+  height: 300rpx;
+  box-shadow: 1px 1px 6px 2px #eee;
+  border-radius: 6px;
+  padding: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Img {
+  width: 400rpx;
+  height: 300rpx;
+  background-color: pink;
+  border-radius: 6px;
+}
+
+.Content {
+  width: 270rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 0;
+}
+
+.Name {
+  font-size: 36rpx;
+  font-weight: 500;
+  padding-top: 10rpx;
+}
+
+.Descripe {
+  font-size: 24rpx;
+  color: #8a8a8a;
+  padding-top: 10rpx;
+}
+
+.Price {
+  font-size: 100rpx;
+  font-weight: 500;
+  color: red;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+}
+
+.BtnJion {
+  padding-top: 10rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.StyleJionBtn {
+  width: 250rpx;
+  border-radius: 40px;
+  margin: 0;
+  background-color: #ff3030;
+  border: 0;
+  color: white;
+  font-size: 26rpx;
+}
+
+/*精选推荐图标选择*/
+
+.Icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx 0 30rpx;
+  align-items: center;
+}
+
+.SelectedIcon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  padding: 10rpx;
+  box-shadow: 1px 1px 6px 2px #eee;
+}
+
+.NonSelectedIcon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+/*商家活动标题*/
+.ContentNull{
+   font-size: 26rpx;
+   color: #8a8a8a;
+   height: 600rpx;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-bottom: 1px solid #eee;
+   width: 100%;
+}
+.HeadTitle {
+  display: flex;
+  justify-content: space-between;
+  padding:20rpx 40rpx 20rpx 40rpx;
+}
+
+.LineImgView {
+  display: flex;
+  align-items: center;
+}
+
+.HeadTitleWords {
+  font-size: 36rpx;
+  font-weight: 450; 
+}
+
+.LineImg {
+  width: 240rpx;
+  height: 20rpx;
+}
+
+.StoreActivityTitle {
+  font-size: 36rpx;
+  font-weight: 500;
+  text-align: center;
+  padding: 20rpx 0 40rpx 0;
+}
+
+/*过滤筛选*/
+.filter{
+  padding:30rpx 40rpx 0rpx 40rpx;
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+
+/*商家活动导航栏*/
+.NavBar {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: space-between;
+  font-size: 30rpx;
+  padding:0 40rpx;
+
+}
+
+.NavSelect {
+  /* width: 33%; */
+  text-align: center;
+  color: red;
+  padding: 20rpx 0;
+  border-bottom: 3px solid red;
+  font-weight: 500;
+  font-size: 30rpx;
+}
+
+.NavNonSelect {
+  /* width: 33%; */
+  text-align: center;
+  padding: 20rpx 0;
+   font-size: 30rpx;
+}
+
+/*正在进行的商家活动*/
+
+.Activity {
+  padding: 20rpx 20rpx;
+  padding-bottom:0;
+}
+
+.ActivityImg {
+  height: 400rpx;
+  border-radius: 5px;
+   position: relative;
+}
+.ActivityListImg{
+  height: 400rpx;
+  width: 100%;
+ 
+}
+.LeftGoods{
+  background-color: red;
+  padding:10rpx;
+  color: #fff;
+  width: 200rpx;
+  text-align: center;
+  font-size: 30rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.ActivityTitleContent {
+  display: flex;
+  font-size: 36rpx;
+  font-weight: 500;
+  padding: 10rpx;
+  height: 62rpx;
+  align-items:center;
+
+}
+
+.ActivityIcon {
+  display: flex;
+  height: 90rpx;
+}
+
+.LeftIconContainer {
+  width: 50%;
+  display: flex;
+}
+
+.RightIconContainer {
+  width: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+.ActivityPriceBtn{
+  width: 250rpx;
+}
+.IconContainer {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.IconContainerNext {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30rpx;
+  background-color: #fff;
+}
+
+.AcitivityIconEntity {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+/*活动价格*/
+
+.ActivityPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DownPrice {
+  font-size: 32rpx;
+  color: red;
+  font-weight: 500;
+}
+
+.InitPrice {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+swiper {
+  height: 300rpx;
+}
+
+.topImg {
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.title {
+  text-align: center;
+  box-shadow: 0px 0px 5px #eee;
+}
+
+.title text {
+  font-family: 'fzzzh', sans-serif;
+}
+
+.text-view {
+  padding: 20rpx 0 20rpx 0;
+  color: #8a8a8a;
+  font-size: 24rpx;
+}
+
+.text-view-line {
+  font-weight: 300;
+}
+
+.titleBar {
+  width: 100%;
+  height: 15rpx;
+  background-color: rgb(241, 241, 241);
+}
+
+/*新增优惠券banenr*/
+
+.yhq-banner {
+  height: 240rpx;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid #f2f2f2;
+  background: #fff;
+}
+
+.h5-banner {
+  height: 240rpx;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid #f2f2f2;
+  background: #fff;
+}
+
+.no-hyq {
+  font-size: 24rpx;
+  color: #8a8a8a;
+  text-align: center;
+  margin: 50rpx 0 50rpx 0;
+}
+
+/*新增优惠券view*/
+
+.Coupon-view {
+  padding: 0 20rpx 0 20rpx;
+}
+
+.Coupon {
+  position: relative;
+  border: 1px solid #f2f2f2;
+  height: 180rpx;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+  font-family: "Microsoft YaHei";
+  background: #fff;
+}
+
+.img-view {
+  float: left;
+  width: 138rpx;
+  height: 138rpx;
+  margin: 20rpx;
+  border: 1px solid #f1f2f6;
+  transition: all 0.2s ease-in-out, opacity 1s;
+}
+
+.img-view image {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.functional {
+  position: relative;
+  float: left;
+  z-index: 2;
+  width: 300rpx;
+  height: 160rpx;
+  padding: 10rpx 0 0 0;
+  color: #333;
+  outline: 0;
+}
+
+.price {
+  width: 300rpx;
+  height: 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price em {
+  display: inline-block;
+  font: 400 18px arial;
+  vertical-align: top;
+  margin: 3px 3px 0 0;
+  color: #f23030;
+}
+
+.price strong {
+  display: inline-block;
+  font: 400 60rpx arial;
+  vertical-align: top;
+  color: #f23030;
+}
+
+.price span {
+  display: inline-block;
+  font-size: 24rpx;
+  margin: 12px 0 0 10px;
+  vertical-align: top;
+  color: #f23030;
+  padding: 0 5px;
+  background: #fff4ec;
+}
+
+.range {
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: default;
+}
+
+.date {
+  width: 100%;
+}
+
+.date span {
+  color: #666;
+  font-size: 12px;
+  display: block;
+}
+
+.progress {
+  width: 100%;
+}
+
+.progress span {
+  color: #666;
+  font-size: 12px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+
+.progress progress {
+  padding-top: 5px;
+}
+
+.receive {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160rpx;
+  height: 180rpx;
+  background-color: #fb0f3a;
+}
+
+.inner-receive {
+  width: 160rpx;
+  height: 180rpx;
+  border-left: 1px #333 dashed;
+  margin-left: -1px;
+}
+
+.inner-receive text {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 160rpx;
+  height: 70%;
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  top: 70rpx;
+  font-weight: 600;
+}
+
+.CheckMore {
+  color: #8a8a8a;
+  font-size: 24rpx;
+  text-align: center;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+
+.choice-view {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  padding-bottom: 10rpx;
+}
+
+.tools-img {
+  margin: 0;
+  width: 340rpx;
+  height: 200rpx;
+  margin-left: 25rpx;
+}
+
+button {
+  margin-bottom: 8px;
+  width: 700rpx;
+}

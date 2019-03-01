@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "menu": "/component/menu/menu",
+    "Picker": "/component/picker/picker",
+    "support":"/component/support/support"
+  }
+}

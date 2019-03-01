@@ -1,0 +1,7 @@
+<!--pages/ScanIndex/ScanIndex.wxml-->
+<view class='body'>
+  <view class='Panel'>
+     <input placeholder='请输入您本次的消费金额' type='number'></input>
+  </view>
+  <button type='warn' class='btnSumbit'>确认并开启砍价</button>
+</view>

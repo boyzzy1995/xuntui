@@ -1,0 +1,2 @@
+<!--pages/outer/FlappyBird.wxml-->
+<web-view src="https://www.51xuntui.com/FlappyBird/index.html?"></web-view>

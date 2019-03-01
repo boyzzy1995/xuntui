@@ -1,0 +1,11 @@
+<!--pages/JionActivity/Rules/Rules.wxml-->
+<view class='Panel'>
+  <view class='Title'>
+    活动规则
+  </view>
+  <view class='Content'>
+    <text wx:for="{{rules}}" wx:key="">
+       {{item}} 
+    </text> 
+  </view>
+</view>

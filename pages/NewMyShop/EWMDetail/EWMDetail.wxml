@@ -1,0 +1,9 @@
+<!--pages/NewMyShop/EWMDetail/EWMDetail.wxml-->
+
+<view class='GrayLine'></view>
+<view class='WhitePanel'>
+  <view class='canvas-box'>
+   <image src='{{imgUrl}}' class='img'></image>
+  </view>
+  <!-- <button class='SaveButton' bindtap="saveImg">保存图片</button> -->
+</view>

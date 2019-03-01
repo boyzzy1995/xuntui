@@ -1,0 +1,2 @@
+<!--pages/outer/toulan.wxml-->
+<web-view src="https://www.51xuntui.com/toulan/index.html" bindmessage='msgHandle'></web-view>

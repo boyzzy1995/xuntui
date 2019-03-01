@@ -1,0 +1,16 @@
+<!--pages/about/about.wxml-->
+<image src='{{usData.preview}}' class='imageTop'></image>
+<view class='body'>
+  <view class="produce-view">
+    寻推简介
+  </view>
+  <view class='content'>
+    {{usData.content}}
+  </view>
+</view>
+<view class="produce-view">
+    寻推展示
+  </view>
+<view wx:for="{{usData.explodedViews}}" class='recommendView' wx:key="">
+  <image src='{{item}}' class='recommendImg'></image>
+</view>

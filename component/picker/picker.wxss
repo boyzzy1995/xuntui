@@ -1,0 +1,10 @@
+/* component/picker/picker.wxss */
+swiper {
+  height: 300rpx;
+}
+
+.topImg {
+  width: 750rpx;
+  height: 300rpx;
+  margin-top: 0;
+}

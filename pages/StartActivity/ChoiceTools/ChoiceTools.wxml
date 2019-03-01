@@ -1,0 +1,71 @@
+<!--pages/StartActivity/ChoiceTools/ChoiceTools.wxml-->
+<view style='padding-bottom:90rpx;'>
+  <view class='panel' wx:if="{{tipFlag}}">
+    <text class='text'>喜欢我,就添加到我的小程序吧~</text>
+    <view class='iconView' bindtap="handlerCloseTip">
+      <image src='/images/err.png' class='icon'></image>
+    </view>
+  </view>
+  <Picker id="Picker"></Picker>
+  <!--标题-->
+  <view class='HeadTitle'>
+    <view class='LineImgView'>
+      <image src="/static/Line.png" class='LineImg'></image>
+    </view>
+    <view class='HeadTitleWords'>
+      基础版
+    </view>
+    <view class='LineImgView'>
+      <image src="/static/Line.png" class='LineImg'></image>
+    </view>
+  </view>
+  <!--商家工具内容模块-->
+  <block wx:for="{{ToolsList}}" wx:key="{{index}}">
+    <view class="ToolsView" wx:if="{{item.flag==true}}">
+      <view class='ToolsContainer'>
+        <view class='ToolsImg'>
+          <image src='{{item.imgurl}}'></image>
+        </view>
+        <view class='ToolsWords'>
+          <view class="ToolsWordsTitle">{{item.Name}}</view>
+          <view class='ToolsDescripe'>{{item.Descripe}}</view>
+          <view class='ToolsButtonView'>
+            <button class='ToolsButtonEntity' bindtap='toTools' data-url="{{item.url}}">选用</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!--标题-->
+  <view class='HeadTitle'>
+    <view class='LineImgView'>
+      <image src="/static/Line.png" class='LineImg'></image>
+    </view>
+    <view class='HeadTitleWords' style=''>
+      专业版即将上线
+    </view>
+    <view class='LineImgView'>
+      <image src="/static/Line.png" class='LineImg'></image>
+    </view>
+  </view>
+
+  <block wx:for="{{ToolsList}}" wx:key="{{index}}">
+    <view class="ToolsView" wx:if="{{item.flag!=true}}">
+      <view class='ToolsContainer'>
+        <view class='ToolsImg'>
+          <image src='{{item.imgurl}}'></image>
+        </view>
+        <view class='ToolsWords'>
+          <view class="ToolsWordsTitle">{{item.Name}}</view>
+          <view class='ToolsDescripe'>{{item.Descripe}}</view>
+          <view class='ToolsButtonView'>
+            <button class='ToolsButtonEntity' disabled='disabled' bindtap='toTools' data-url="{{item.url}}" style='background-color:#eee;color:#fff;'>待开放</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='bottom'>
+  <menu activity="activity" id="component"></menu>
+</view>

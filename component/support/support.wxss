@@ -1,0 +1,7 @@
+/* component/support/support.wxss */
+.bottomLine{
+  font-size: 24rpx;
+  color: #8a8a8a;
+  padding: 20rpx 0;
+  text-align: center;
+}

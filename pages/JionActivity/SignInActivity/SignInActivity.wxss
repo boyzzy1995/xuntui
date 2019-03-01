@@ -1,0 +1,269 @@
+/* pages/JionActivity/SignInActivity/SignInActivity.wxss */
+.RulesView {
+  height: 80rpx;
+  width: 96%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.RulesTitle {
+  float: right;
+  text-align: center;
+  background-color: #8a8a8a;
+  color: #fff;
+  font-size: 26rpx;
+  padding: 10rpx;
+  border-radius: 5px;
+}
+.margin-top {
+  margin-top: 20rpx;
+}
+
+.padding {
+  padding: 0 20rpx;
+}
+
+page {
+  font-size: 32rpx;
+}
+
+.TopBox {
+  padding: 10rpx;
+}
+
+.imgView {
+  height: 410.6rpx;
+  box-shadow: 1px 1px 6px 2px #eee;
+}
+.Topimg{
+  height:410.6rpx;
+  width: 100%;
+}
+.ActivityContent {
+  border-radius: 5px;
+  padding: 10rpx;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: -100rpx;
+  background-color: white;
+  height: 300rpx;
+  box-shadow: 1px 1px 6px 2px #eee;
+}
+
+.title {
+  padding-top: 10rpx;
+  text-align: center;
+  height:50rpx;
+}
+
+.time {
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.where {
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.people {
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 20rpx;
+}
+
+.ActivityIcon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10rpx;
+  height: 90rpx;
+}
+
+.LeftIconContainer {
+  display: flex;
+}
+
+.RightIconContainer {
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+
+.IconContainer {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.IconContainerNext {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30rpx;
+  background-color: #fff;
+}
+
+.AcitivityIconEntity {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+/*活动简介*/
+
+.activityDesc {
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.activityImgList {
+  width: 100%;
+  min-height:379.6rpx;
+  margin-top: 200rpx;
+}
+
+.ImgView {
+  width:675rpx;
+  height:379.6rpx;
+  margin: 0 auto;
+  background-color: pink;
+  margin-top: 20rpx;
+}
+
+.itemImg {
+  width:675rpx;
+  height:379.6rpx;
+}
+
+.ImgWords {
+  font-size: 26rpx;
+  color: #8a8a8a;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+/*报名必填项*/
+
+.inputGroup {
+  border-bottom: 1px solid #eee;
+  padding: 10rpx 20rpx;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.sumbitBtnView {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.subBtn {
+  font-size: 30rpx;
+}
+
+/*折扣券*/
+
+.coupon {
+  border: 1px solid red;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  height: 160rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tx {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: pink;
+  border-radius: 50%;
+}
+
+.content {
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 36rpx;
+  color: red;
+}
+
+.lefttime {
+  font-size: 24rpx;
+  color: #8a8a8a;
+}
+
+.use {
+  font-size: 30rpx;
+}
+
+.LineImgView {
+  display: flex;
+  align-items: center;
+}
+
+.HeadTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.HeadTitleWords {
+  font-size: 32rpx;
+}
+
+.LineImg {
+  width: 240rpx;
+  height: 20rpx;
+}
+
+.OtherActivity {
+  width: 96%;
+  height: 200rpx;
+  margin: 0 auto;
+}
+
+.LineImgSecond {
+  width: 180rpx;
+  height: 20rpx;
+}
+
+.ButtonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.ButtonGroup button {
+  background-color: #add8e6;
+  color: #fff;
+  font-size: 30rpx;
+}

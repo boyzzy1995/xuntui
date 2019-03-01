@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的寻推",
+  "usingComponents": {
+    "menu": "/component/menu/menu"
+  }
+}
